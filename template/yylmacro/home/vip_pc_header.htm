@@ -17,18 +17,19 @@
 				</li>
 				<li class="time">
 					<!-- 只显示ID22会员组的到期时间 -->
-		            <!--{if $_G['member']['groupid'] == 22 }-->
-						<label>$group[grouptitle]到期时间：</label>
+			             <!--{if $_G['member']['groupid'] == 22 }-->
+						<label>VIP会员到期时间：</label>
 						<!-- 如果到期时间小于10天，则添加.expiry样式名 -->
-						<span <!--{if ($_G['member']['groupexpiry'] <= (TIMESTAMP + 864000))}--> class="expiry" <!--{/if}-->> <!--{eval echo date("Y-m-d", $_G['member']['groupexpiry']);}--><em>（即将到期）</em></span>
-					<!--{/if}-->
+						<span <!--{if ($_G['member']['groupexpiry'] <= (TIMESTAMP + 864000))}--> class="expiry" <!--{/if}-->> <!--{eval echo date("Y-m-d", $_G['member']['groupexpiry']);}--><em> <!--{if ($_G['member']['groupexpiry'] <= (TIMESTAMP + 864000))}-->（即将到期）<!--{/if}--></em></span>
+						<!--{/if}-->
 				</li>
 			</ul>
 			<ul class="rights">
 				<!-- 当满足时，给i添加true，不满足时，添加false样式名 -->
 				<!-- 以下数字表示满足的groupid，其余组不满足 -->
 
-				<!-- 22,24,25,26,33,34,36 -->
+			<!-- 22,24,25,26,33,34,36 -->
+				
 				<li>用户名高亮：<i <!--{if ($_G['member']['groupid'] == 22 || $_G['member']['groupid'] == 24 || $_G['member']['groupid'] == 25 || $_G['member']['groupid'] == 26 || $_G['member']['groupid'] == 33 || $_G['member']['groupid'] == 34 ||$_G['member']['groupid'] == 36) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
 				
 				<!-- 22,26,1,2,3,17,34,33,36 -->
