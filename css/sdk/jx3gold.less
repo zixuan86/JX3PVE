@@ -1,0 +1,155 @@
+//@import url('../public/reset.less');
+@import url('public/base.less');
+@import url('public/shape.less');
+@import url('global/var.less');
+
+@bluex:#049abf;
+
+.sdk-container{
+	.w(@wp);.auto(x);
+	.pr;
+	padding:20px 0;
+	min-height:800px;
+}
+
+.sdk-sidebar{
+	.pa;.lt(0,0);
+	.w(220px);
+}
+
+.sdk-aside{
+	.w(320px);
+	.m-compare{}
+	.m-comment{}
+}
+.screen-xl{
+	.sdk-aside{
+		.pa;.lt(100%,0);
+	}
+}
+
+.sdk-main{border:1px dashed #ddd;
+	margin:0 0 0 220px+20px;
+	.sdk-header{
+		h1{.fz(24px,2);.x;}
+		.clearfix;margin-bottom:20px;
+		.m-ac{.fl;}
+		.m-mode{
+			.fr;
+			.price{
+				.pointer;margin-right:10px;
+				.db;.fl;
+			}
+		}
+	}
+	.sdk-content{
+		.fz(12px,2.5);
+
+		table{
+			.auto(x);
+			min-width:920px;
+		}
+
+		th,td{
+			border:1px solid #ddd;
+			min-width:60px;
+		}
+
+		tr{
+			&:hover{
+				background-color: #f7f7f7;
+				.fwq{
+					background-color:#0084ff;
+					color:#fff;
+				}
+			}
+		}
+
+		td{
+			.clearfix;
+			.x;.color(#999,#555,#c00);
+
+			span{
+				.db;.fl;.w(33%);
+				min-width: 80px;
+				//padding:5px 0;
+				border-right:1px solid #ddd;
+
+				.data{
+					.db;
+				}
+
+				&:last-child,&.last{
+					border-right:none;
+				}
+
+				&.null{
+					color:#999;
+				}
+
+				.ok{
+					.bold;
+					color:#f00;
+				}
+				.no{
+					.bold;
+					color:#FF6600;
+				}
+
+				&:hover{
+					.bold;
+					.go{
+						.tm(1);
+					}
+				}
+			}
+			
+		}
+
+		.avprice{
+			color:#00CC00;.bold;
+		}
+
+		.th{
+			background-color:#f7f7f7;
+			th{.x;}
+			.til{
+				.db;
+				border-bottom:1px solid #ddd;
+			}
+			span{
+				.db;.fl;.w(33%);.x;
+			}
+		}
+
+		.fwq{
+			.x;.pr;cursor:default;
+			.w(100px);
+			@keyframes showFWQ{
+			    from{opacity:0;transform:translateY(20%);}
+			    to{opacity:1;transform:translateY(0);}
+			}
+			.fwq-details{
+				.none;
+				.pa;.lb(50%,130%);.z(1);
+				.size(180px,auto);margin-left:-180px/2;
+				//.x(left);
+				background-color:#0084ff;
+				border-radius: 3px;
+				padding: 5px;
+				box-shadow:0 0 2px #0cf;
+				.arrow(b,6px,#0084ff);
+			}
+			&:hover .fwq-details{
+				.db;
+				animation:showFWQ 0.5s ease-in-out forwards;
+			}
+		}
+		
+	}
+	.sdk-footer{
+		.m-warning{}
+		.m-copyright{}
+	}
+}
+

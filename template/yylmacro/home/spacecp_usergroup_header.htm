@@ -1,0 +1,20 @@
+<ul class="tb cl">
+	<!-- 当为用户组页面时 -->
+	<!--{if $usergroups}-->
+		<li class="y$activegs[my] showmenu" id="gmy" onmouseover="showMenu(this.id)"><a href="home.php?mod=spacecp&ac=usergroup">{lang my_usergroups}</a></li>
+		<li class="y$activegs[upgrade] showmenu" id="gupgrade" onmouseover="showMenu(this.id)"><a>{lang usergroup_group2}</a></li>
+		<li class="y$activegs[user] showmenu" id="guser" onmouseover="showMenu(this.id)"><a>{lang usergroup_group1}</a></li>
+		<li class="y$activegs[admin] showmenu"id="gadmin" onmouseover="showMenu(this.id)"><a>{lang usergroup_group3}</a></li>
+	<!--{/if}-->
+	
+	<li {if ($_GET['ac']=="usergroup")} class="a"{/if}><a href="home.php?mod=spacecp&ac=usergroup&do=list">会员中心</a></li>
+	<li {if ($_GET['ac']=="credit")} class="a"{/if}><a href="home.php?mod=spacecp&ac=usergroup&do=list">充值</a></li>
+	<!-- 积分兑换暂未开放 -->
+	<li><a class="u-disabled" href="javascript:void(0)">积分兑换</a></li>
+	
+	<!-- 暂时废弃论坛交流权限一栏 -->
+	<!-- <li$activeus[forum]><a href="home.php?mod=spacecp&ac=usergroup&do=forum">{lang my}{$_G['setting']['navs'][2]['navname']}{lang rights}</a></li> -->
+
+	<!-- 会员组页面tab卡移除位置，在会员中心会员信息中链接进来 -->
+	<!-- <li$activeus[usergroup]><a href="home.php?mod=spacecp&ac=usergroup">{lang my_usergroups}</a></li> -->
+</ul>

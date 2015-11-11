@@ -1,0 +1,51 @@
+//折叠展开除主楼以外楼层
+.u-msg-posttips{
+	margin:10px 0;
+	.fzlh(12px,26px);
+	i{
+		background:url('@{url}icon/add.gif') no-repeat 0 0;
+		.dbi;.size(13px);.y(-2px);margin-right:5px;
+		&.on{
+			background:url('@{url}icon/desc.gif') no-repeat 0 0;
+		}
+	}
+	background: #f7f7f7;
+	border: 1px solid #eee;
+	.x;
+	color:#888;
+	.pointer;
+	&:hover{
+		background-color:#f6f6f6;
+		border:1px solid #ddd;
+		color:@bluex;
+	}
+}
+
+//回复灌水提醒
+.u-msg-replytips,.u-msg-replytip{
+	.banner{
+		.db;
+		margin-bottom:5px;
+	}
+	.attips{
+		.fz(13px,2);
+		padding:0 5px;
+		border:#f7f7f7;
+		border-radius:3px;
+		border:1px solid #eee;
+		b{color:#f39;.bold;}
+		em{color:#777;font-size:12px;margin-left:5px;}
+	}
+}
+
+.u-msg-replytips .banner{
+	.size(100%,60px);
+	.clip;
+}
+
+.u-msg-replytip .banner{
+	.size(100%,60px);
+	.clip;
+	border:1px solid #eee;
+	border-radius:3px;
+}

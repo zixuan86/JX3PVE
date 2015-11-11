@@ -1,0 +1,105 @@
+.bbs-listpage{
+	//列表页内容
+	.c-flist .c-flist-list tbody{
+		.h(68px);
+		tr{.h(68px);}
+		td,th{.fzlh(12px,30px);}
+		.pr;
+
+		.status,.reply{.db;}
+
+		.status{
+			.statu-icon{.fl;.none;}
+			.clearfix;
+
+			.avatar{
+				margin-left:5px;
+				.fl;
+				img{
+					width: 32px;
+					height: 32px;
+					border-radius: 32px;
+				}
+			}
+		}
+
+		.article{
+			.fz(14px,18px);color:#222;
+		}
+
+		.counts{
+			.pa;.rt(0,0);
+			padding:2px 5px;
+			/*background: #0084ff;
+			color: #fff;*/
+			.tips(grays);
+			.fl;margin-left:5px;
+			margin-top:5px;
+			display: block;
+			height: 20px;
+			line-height: 20px;
+			.replys{
+				color:#09f;
+			}
+			.views{
+
+			}
+		}
+
+		.til{
+			margin-left:5px;
+			min-width: 600px;
+		}
+
+		.author{
+			//.color(#666,#666,#222);
+			.w(auto);
+			.clear(left);
+			.fl;.x(left);
+			.verif{
+				.none;
+			}
+			.post-time{color:#888;}
+		}
+
+		.reply{
+			.fr;//.color(#666,#666,#222);
+			//.color(#999,#999,#d05);
+			.reply-time{
+				color:#999;
+			}
+		}
+		
+	}
+
+	.w-category-nav{
+		li{
+			img{.none;}
+		}
+		.m-bbs-help-tips{
+			.tips(grays);
+			.pa;.rt(0,0);.z(2);
+			padding:3px;
+			color:#777;
+			a{
+				color:@bluex;text-decoration:underline;
+				&:hover{color:#444;}
+				border:none;float:none;background: none;
+				padding:0;margin:0;
+			}
+			i{
+				background:url('@{url}bbs/love.png') no-repeat 0 center;
+				width: 14px;
+				height: 14px;
+				display: inline-block;
+				vertical-align: -2px;
+				margin-right: 3px;
+			}
+		}
+	}
+	.c-flist tbody .til .sortinfo{
+		.size(32px,18px);
+		img{.y(-5px);}
+		*{padding:0 !important;margin:0 !important;}
+	}
+}

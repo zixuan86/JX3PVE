@@ -1,0 +1,37 @@
+@pvx-sidebar-w:280px;
+
+//整区包裹
+.pvx-container{
+	background-image: url('http://ww4.sinaimg.cn/large/bcc700eegw1eunybduf0vj21hc0m8dsf.jpg');
+	background-repeat: no-repeat;
+	background-color: #f2f2f2;
+	background-position: center top;
+	margin-top:1px;
+	padding-bottom:40px;
+}
+
+//默认内容区 （.boardnav）
+.pvx-main{
+	.w(@wp - 20px*2);padding:20px;
+	.auto(x);
+	background-color:#fff;
+	border-radius:6px;
+	.clearfix;
+}
+
+//内容侧边栏
+.pvx-sidebar{
+	.fl;
+	.w(@pvx-sidebar-w);margin-right:20px;
+}
+
+//内容正区
+.pvx-content{
+	.fl;
+	.w(@wp - 20px*2 - @pvx-sidebar-w - 20px);
+}
+
+//内容实体区（#ct）
+.pvx-article{
+	border:none;background:none;box-shadow:none;
+}

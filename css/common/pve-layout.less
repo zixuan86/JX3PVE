@@ -1,0 +1,77 @@
+//全局布局
+@pve-sidebar-w:200px;
+
+.pve-container{
+	background-color: #f2f2f2;
+	padding:20px 0;
+	margin-top:1px;
+
+	.w-route{
+		border-bottom:1px dotted #ddd !important;
+		margin-bottom:10px !important;
+	}
+	.w-route .extend .bzbox{
+		.tb(127,229,247,0.9);
+		a:hover{.color(#d05);}
+	}
+}
+
+.pve-main{
+	.clearfix;
+}
+
+.pve-sidebar{
+	transition:position 0.2s ease-in-out;
+	.w(@pve-sidebar-w);
+	.fl;
+}
+
+.pve-content{
+	.fr;
+	.w(@wp - @pve-sidebar-w - 20px);
+	.clearfix;
+}
+
+.pve-primary,.pve-article{
+	padding:20px;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 0 4px rgba(0,0,0,0.1);
+	border: 1px solid #ddd;
+}
+
+.pve-primary{
+	.clearfix;
+	margin-bottom:20px;
+
+	.m-compass{
+		.fl;
+		.w(@wp - @pve-sidebar-w - 20px - 20px*2 - 240px - 20px);
+	}
+
+	.m-sidebar{
+		.w(240px);.fr;
+	}
+}
+
+.u-postbtn{
+	background:none !important;
+	.u-btn-blue(b) !important;
+}
+
+.pve-fastpost{
+	#fastpostsubmit{
+		.u-btn-blue(b) !important;
+	}
+}
+
+.pve-container{
+	.m-fj{.none;}
+	.m-banner-bottom{
+		.size(960px - 40px,60px);overflow:hidden;
+	}
+}
+
+.pve-postbox{
+	.ad{.none;}
+}

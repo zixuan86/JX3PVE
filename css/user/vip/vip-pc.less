@@ -1,0 +1,243 @@
+.vip-pc-nav{
+	.u-disabled{
+		cursor:default;
+	    color: #BDBABA;
+    	background-color: #eee;
+	}
+}
+
+.vip-pc-container{
+
+	padding: 0 10px;
+
+	//块头
+	.block{
+		.clearfix;
+		margin:0 0 10px 0;
+	}
+
+	//标题
+	.vip-pc-title{
+		line-height:28px;height:28px;background:#f2f2f2;border-radius:20px;
+		padding-left:20px;color:#999;font-weight:normal;margin-bottom:10px;
+		span{.fr;padding-right:20px;text-transform:uppercase;font-family:Trebuchet MS;letter-spacing:0.5px;}
+	}
+
+	//警告图标
+	.u-icon-warning{
+		.dbi;.size(16px);.y(top);margin-right:5px;
+		background:url('@{url}icon/icon-report-16.png') no-repeat left center;
+	}
+
+	//成功图标
+	.u-icon-success,.u-icon-error{
+		.dbi;.size(34px);.y(top);
+		background-repeat:no-repeat;
+		background-position:center center;
+		margin-right: 5px;
+	}
+	.u-icon-success{
+		background-image:url('@{url}icon/right.gif');
+	}
+	.u-icon-error{
+		background-image:url('@{url}icon/error.gif');
+	}
+
+}
+
+.vip-pc-header{
+	img{.db;}
+}
+
+.vip-pc-status{
+	padding:0 10px;
+	.pr;
+	min-height:58px;
+
+	.avt{
+		.pa;.lt(10px,0);//.size(48px);
+		//padding:2px;border:1px solid #ddd;border-radius:4px;box-shadow:0 0 4px #ddd;
+	}
+	.profile{
+		margin-left:68px;
+		.pr;.fz(12px,2.2);
+
+		.baseinfo{
+			.clearfix;
+			li{
+				.fl;
+				img{.y(text-bottom);}
+				margin-right:20px;
+				label{cursor:text;}
+				span{.bold;}
+			}
+			.time{
+				span{color:@green;}
+				span em{.none;}
+				.expiry{
+					color:#f00;
+					em{color:#999;.di;}
+				}
+				.tab-btn{.color(@bluex,#c00);margin-right:10px;}
+			}
+		}
+		.rights{
+			color:#777;
+			li{
+				.fl;margin-right:15px;
+			}
+			i{.size(14px,12px);.dbi;background-repeat:no-repeat;background-position:center center;}
+			.true{background-image:url('@{url}icon/data_valid.gif');}
+			.false{background-image:url('@{url}icon/data_invalid.gif');}
+		}
+		.credit{
+			.fz(22px,24px);
+			.pa;.rt(0,0);
+			label{.fz(16px);}
+			.number{
+				margin-right:5px;
+				.bold;
+				.color(#F95706);
+			}
+			.addcre{
+				.color(@bluex,@blue);
+				//text-decoration:underline;
+				.db;
+				.fz(14px,16px);
+				padding:5px 10px;.x;
+				.u-btn-blue(b);
+				.r(3px);
+				margin-top:5px;
+				&:hover{
+					color:#fff;
+				}
+			}
+		}
+	}
+}
+
+.vip-pc-buy{
+	padding:0 20px;
+	.m-title{
+		.fz(13px,2.5);color:#777;
+	}
+	.m-days,.m-payway{
+		.auto(x);
+		.w(242px*3 - 20px);
+
+		form,.m-wrapper{
+			.w(242px*3);
+			.db;.clearfix;
+		}
+		label{
+			.db;.pointer;
+			*{*cursor:pointer;}
+			img{.db;}
+			input{.none;}
+
+			.size(220px,88px);
+			border:1px solid #ddd;
+			.r(3px);.fl;
+			margin-right:20px;
+			background-color:#fffdfd;
+
+			span{.db;.x;}
+			small{.fz(12px);color:#666;}
+			.time{
+				.db;.fz(24px,26px);
+				small{margin-left:2px;}
+			}
+			.credit{
+				.db;.fz(14px,26px);color:#666;
+				small{.none;}
+			}
+
+			&:hover,&.on{
+				border-color:@yel;
+				background-color:#fff;
+			}
+		}
+
+		.tovevip-12month{
+			.pr;
+			i{text-decoration:line-through;margin-right:10px;}
+			b{color:@green;.bold;}
+			&:after{
+				content:'';
+				.db;.size(64px);.pa;.rt(0,0);
+				background:url('@{url}vip/zhekou.png') no-repeat right top;
+			}
+		}
+	}
+	.m-days{
+		margin-bottom:20px;
+		label span{
+			padding-top:20px;
+		}
+	}
+	.m-msg{
+		.fz(13px,16px);
+		margin:15px 0;.x;
+		padding:20px;
+		.r(2px);
+		.w(600px);.auto(x);
+		background-color:#fff;
+		
+		b{.color(#f00);.bold;}
+		a{text-decoration:underline;.color(@bluex,@blue);}
+		.skip{
+			.color(#999,#777);
+			text-decoration:none;
+		}
+		.credit{
+			margin-left:3px;
+			.dbi;.y(text-bottom);.size(16px);margin-right:2px;
+			background:url('@{url}icon/viewpay.gif') no-repeat 0 0;
+		}
+		.u-crebtn{
+			.u-btn-blue(b);
+			.db;
+			.size(120px,32px);
+			.fz(13px,32px);
+			text-decoration:none;
+			.auto(x);
+			margin-top:10px;
+			&:hover{color:#fff;}
+		}
+		.u-tips{
+			b{
+				.fz(16px,34px);
+			}
+		}
+	}
+	.m-msg-true{border:1px solid @green;}
+	.m-msg-false{border:1px solid @yel;}
+
+	.m-gobutton{
+		.db;.size(280px,80px);
+		margin:20px auto;
+		color:#fff;
+		border:none;
+		background:#cc0000;
+		.r(4px);
+		.fz(24px,80px);
+		&:hover{
+			background:lighten(#c00,5%);
+		}
+	}
+}
+
+.vip-pc-intro{
+	background:url("@{url}vip/nav-bg.png") no-repeat center top;
+	height:109px;
+	margin:20px 0 10px;
+}
+
+.vip-pc-details{
+	padding-right:240px;
+	padding-left:20px;
+	margin:20px 0;
+	background:url("@{url}vip/mogubg.png") no-repeat right top;
+	table{width:100%;}
+	td{border:1px solid #ddd;padding:2px 5px;line-height:24px;color:#777;}
+}

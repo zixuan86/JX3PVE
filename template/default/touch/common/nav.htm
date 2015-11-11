@@ -1,0 +1,21 @@
+<header class="i-header">
+	<!--{if $_G['setting']['domain']['app']['mobile']}-->
+		{eval $nav = 'http://'.$_G['setting']['domain']['app']['mobile'];}
+	<!--{else}-->
+		{eval $nav = "forum.php";}
+	<!--{/if}-->
+	<div class="i-header-nav">
+		<a class="os" href="javascript:void(0)" id="i-header-os">菜单</a>
+		<a class="logo" href="$nav" title="$_G[setting][bbname]">JX3PVE.COM</a>
+	</div>
+	<div class="i-header-panel">
+		<a class="search" href="search.php?mod=forum">{lang search}</a>
+		<a class="more" href="javascript:void(0)" id="i-header-more"></a>
+	</div>
+	<div class="i-header-extend" id="i-header-extend">
+		<ul>
+			<li><a class="exchange" href="http://www.jx3pve.com/?mobile=no"><i></i>切换电脑版</a></li>
+		</ul>
+	</div>
+</header>
+<!--{template common/sidebar}-->

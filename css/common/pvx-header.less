@@ -1,0 +1,93 @@
+.pvx-header{
+
+	@header-w:@wp;
+	@header-h:120px;
+	@logo-w:240px;
+
+	.w(@wp);.h(@header-h - 20px);padding:10px 0;.auto(x);
+	.clearfix;
+
+	//logo
+	.m-logo{
+		.db;.w(@logo-w);.h(100%);
+		.fl;
+		.indent;
+	}
+
+	//box
+	.m-box{
+		.fr;
+		.w(@wp - @logo-w - 20px);
+	}
+
+	//banner
+	.m-banner{
+		.size(@wp - @logo-w - 20px,60px);
+		.clip;
+		margin-bottom:10px;
+	}
+
+	//route
+	.m-route{
+		.r(24px);
+		padding:0 10px;
+		.tb(255,255,255,0.6);
+		//text-shadow:-1px -1px 0 #fff;
+		.extend ul li a{
+			&:hover,&.on{background: none;color:@bluex;}
+		} 
+	}
+
+
+	//old nav
+	.pvx-header-nav{
+		background:url('@{url}common/nav-bg-auto.png') no-repeat center top;
+		.lh(51px);
+		ul{
+			.w(@wp - 100px);.auto(x);
+			.clearfix;
+			li{
+				.fl;
+				a{
+					.db;padding-left:30px;.pr;
+					.fz(14px);.color(#fff,#fff);
+					.w(80px);.clip;
+					i{
+						.db;.full;.pa;.lt(0,0);
+						background:url('@{url}common/nav-on.png') no-repeat 0 60%;
+						.none;
+					}
+					@keyframes pvxHeaderOn{
+					    from{
+					    	transform:translateY(50%);
+					    	opacity:0;
+					    }
+					    to{
+					    	transform:translateY(0);
+					    	opacity:1;
+					    }
+					}
+					&.on,&:hover{
+						text-shadow: 0 0 8px #f4d1e7;
+						i{
+							.db;
+							animation:pvxHeaderOn 0.3s ease-in-out;
+						}
+					}
+					/*&.pub{
+						background:url('@{url}common/pubicon.png') no-repeat right 18%;
+						//transition:background 0.3s ease-in-out;
+						//padding-right:27px;
+						&:hover,&.on{
+							background: none;
+						}
+					}*/
+				}
+			}
+		}
+	}
+}
+
+.pvx-footer{
+	
+}

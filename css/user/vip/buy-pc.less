@@ -1,0 +1,91 @@
+.u-buy-pc-credit{color:#c00;}
+
+.buy-pc-primary{
+	.m-days label span{padding-top:30px;}
+	.m-days label .credit{.none;}
+
+	.m-title{
+		margin-bottom:12px;
+	}
+
+	.m-wrapper{
+		.clearfix;
+	}
+
+	.m-custom{
+		.clearfix;
+		.tobuy-custom,.u-buy-tips{.fl;}
+	}
+
+	.tobuy-custom{
+		margin:10px auto;
+		.size(342px,42px);
+		.pr;
+		.u-text-buynum{
+			border:1px solid #ddd;
+			.r(2px);
+			.size(280px,40px) !important;
+			.fz(16px,40px);
+			.db;.auto(x);
+			padding:0 50px 0 10px;
+			box-shadow:0 0 2px #eee inset;
+			transition:0.2s ease-in-out;
+			.tip(custom,color,#ccc);
+		}
+		.price{
+			.pa;.rt(10px,10px);
+			.fz(14px);
+			color:#ccc;
+			transition:0.1s ease-in-out;
+			background-color:#fff;
+		}
+		&.u-focus{
+			.u-text-buynum{
+				border:1px solid @yel;
+				box-shadow:0 0 6px #eee inset;
+			}
+			.price{
+				color:@yel;
+			}
+		}
+		&.u-error{
+			.u-text-buynum{
+				border-color:#f00;
+			}
+			.price{
+				color:#f00;
+			}
+		}
+	}
+
+	.u-buy-tips{
+		.x;padding-left:10px;padding-top:10px;
+		color:@yel;
+	}
+
+	.m-payway{
+		.m-tips-alipay{
+			margin-top:20px;.x;
+			border:1px solid #ddd;
+			background-color:#f7f7f7;
+			padding:5px 10px;
+			.fz(12px,1.6);
+			b{color:#c00;.bold;}
+			.r(2px);
+		}
+	}
+
+	.m-gobutton-buy{
+		.u-btn-blue(b);
+	}
+
+}
+
+.buy-pc-exchange,.buy-pc-transfer,.buy-pc-log{
+	padding:0 20px;
+}
+
+.user-credit-ac{
+	line-height:24px;padding:10px;
+	border:1px solid #ccc;
+}
