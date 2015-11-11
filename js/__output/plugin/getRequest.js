@@ -1,0 +1,1 @@
+var getRequest=function(e){var t=location.search,s={};if(-1!=t.indexOf("?"))for(var n=t.substr(1),r=0,i=n.split("&");r<i.length;r+=1)s[i[r].split("=")[0]]=unescape(i[r].split("=")[1]);var a=s[e.toLowerCase()];return"undefined"==typeof a?"":a};window.getRequest=getRequest;

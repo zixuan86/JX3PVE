@@ -1,0 +1,1 @@
+var preventSetNewLine=function(e){return 13===e.keyCode?(document.execCommand("formatBlock",!1,"<p>"),!1):void 0},ready=function(){/chrome/i.test(navigator.userAgent)&&document.body.addEventListener("keydown",preventSetNewLine)};

@@ -1,0 +1,1 @@
+H.ready(["jquery"],function(){jQuery(function(t){var e=t(window),n=t("#m-raid-rate-trigger"),o=t("#m-raid-rate"),r=t("#ak_rate");n.on("click",function(t){t.preventDefault();var n=o.offset().top;e.scrollTop(n-50)}),n.one("click",function(){setTimeout(function(){r.addClass("focusthis")},300)})})});

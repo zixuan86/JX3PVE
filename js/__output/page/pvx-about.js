@@ -1,0 +1,1 @@
+H.ready(["jquery"],function(){jQuery(function(n){n(".m-about-join .go").on("click",function(){n(this).parent(".default").parent("li").toggleClass("on")}),n(".m-about-join .details").each(function(){var t=n(this).html(),i=t.replace("\n",""),o=i.split("\n").join("<br/>");n(this).html(o)})})});

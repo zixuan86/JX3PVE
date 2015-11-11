@@ -1,0 +1,1 @@
+H.ready(["jquery"],function(){jQuery(function(t){var o=t("#u-tgpost"),e=t(".c-fli").not(":first"),s=t("#u-tgpost-icon"),l=t("#u-tgpost-text");isFolderDefault=t(".tgpost-folder").length,o.on("click",function(){e.fadeToggle("slow"),l.text(s.hasClass("on")?"展开":"折叠"),s.toggleClass("on")}),isFolderDefault?e.hide():(s.addClass("on"),l.text("折叠"))})});
