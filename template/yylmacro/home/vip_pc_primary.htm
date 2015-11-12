@@ -58,7 +58,12 @@
 		</div>
         <div class="m-msg m-msg-true" id="buyVipSuccess" style="display:none;">
         	<p class="u-tips">
-        		<i class="u-icon-success"></i><b>恭喜你，开通VIP成功!</b>
+        		<i class="u-icon-success"></i>
+        		<!--{if $_G['member']['groupid'] == 22 }-->
+        			<b>恭喜你，续费成功!</b>
+        		<!--{else}-->
+        			<b>恭喜你，开通VIP成功!</b>
+        		<!--{/if}-->
         	</p>
         	<p><span id="u-vip-msg-countdown">3</span>秒后刷新页面</p>
 		</div>
