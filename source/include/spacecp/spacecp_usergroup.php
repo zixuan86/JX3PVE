@@ -119,18 +119,22 @@ if(in_array($do, array('buy', 'exit'))) {
 			$extgroupidsnew = implode("\t", $extgroupidsarray);
 			if($group['dailyprice']) {
 				if(($days = intval($_GET['days'])) < $group['minspan']) {
-					showmessage('usergroups_span_invalid', '', array('minspan' => $group['minspan']));
+                    makeSpacecpUserGroupAjax(0, "抱歉,米币不足");
+					//showmessage('usergroups_span_invalid', '', array('minspan' => $group['minspan']));
 				}
 
 				if($space['extcredits'.$creditstrans] - ($amount = $days * $group['dailyprice']) < ($minbalance = 0)) {
-					showmessage('credits_balance_insufficient', '', array('title'=> $_G['setting']['extcredits'][$creditstrans]['title'],'minbalance' => ($minbalance + $amount)));
+
+                    makeSpacecpUserGroupAjax(0, "抱歉,米币不足");
+                    //showmessage('credits_balance_insufficient', '', array('title'=> $_G['setting']['extcredits'][$creditstrans]['title'],'minbalance' => ($minbalance + $amount)));
 				}
 
 				$groupterms['ext'][$groupid] = ($groupterms['ext'][$groupid] > TIMESTAMP ? $groupterms['ext'][$groupid] : TIMESTAMP) + $days * 86400;
 
 				$groupexpirynew = groupexpiry($groupterms);
-	
-				C::t('common_member')->update($_G['uid'], array('groupexpiry' => $groupexpirynew, 'extgroupids' => $extgroupidsnew));
+
+                C::t('common_member')->update($_G['uid'], array('groupid' => $groupid, 'groupexpiry' => $groupexpirynew, 'extgroupids' => $extgroupidsnew));
+                //C::t('common_member')->update($_G['uid'], array('groupexpiry' => $groupexpirynew, 'extgroupids' => $extgroupidsnew));
 				updatemembercount($_G['uid'], array($creditstrans => "-$amount"), true, 'UGP', $extgroupidsnew);	
 
 				C::t('common_member_field_forum')->update($_G['uid'], array('groupterms' => serialize($groupterms)));
@@ -138,9 +142,9 @@ if(in_array($do, array('buy', 'exit'))) {
 			} else {
 				C::t('common_member')->update($_G['uid'], array('extgroupids' => $extgroupidsnew));
 			}
- 
-	
-			showmessage('usergroups_join_succeed', "home.php?mod=spacecp&ac=usergroup".($_GET['gid'] ? "&gid=$_GET[gid]" : '&do=list'), array('group' => $group['grouptitle']), array('showdialog' => 3, 'showmsg' => true, 'locationtime' => true));
+
+            makeSpacecpUserGroupAjax(1, "开通会员成功");
+			//showmessage('usergroups_join_succeed', "home.php?mod=spacecp&ac=usergroup".($_GET['gid'] ? "&gid=$_GET[gid]" : '&do=list'), array('group' => $group['grouptitle']), array('showdialog' => 3, 'showmsg' => true, 'locationtime' => true));
 			//showmessage('usergroups_join_succeed', "", array('group' => $group['grouptitle']),array('alert' => right));
 
 		} else {

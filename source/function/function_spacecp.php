@@ -733,4 +733,11 @@ function allowverify($vid) {
 	}
 	return $allow;
 }
+
+//新增函数 2015/11/10
+function makeSpacecpUserGroupAjax($code, $msg = '') {
+    echo json_encode(array("code" => $code, "msg" => $msg));
+    die();
+}
+
 ?>
