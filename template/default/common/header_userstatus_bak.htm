@@ -10,7 +10,7 @@
 
 	<span class="pipe">|</span><a class="useros" href="http://www.jx3pve.com/home.php" id="myitem" >{lang mycenter}</a>	
 
-	<span class="pipe">|</span><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup&do=list">开通/续费会员</a>	
+	<span class="pipe">|</span><a href="./vip">开通/续费会员</a>	
 
 	<span class="pipe">|</span><a href="home.php?mod=space&do=notice" id="myprompt" class="msg {if $_G[member][newprompt]} new{/if}" onmouseover="showMenu({'ctrlid':'myprompt'});">{lang remind}<!--{if $_G[member][newprompt]}-->($_G[member][newprompt])<!--{/if}--></a><span id="myprompt_check"></span>
 	<!--{if empty($_G['cookie']['ignore_notice']) && ($_G[member][newpm] || $_G[member][newprompt_num][follower] || $_G[member][newprompt_num][follow] || $_G[member][newprompt])}--><script language="javascript">delayShow($('myprompt'), function() {showMenu({'ctrlid':'myprompt','duration':3})});</script><!--{/if}-->
