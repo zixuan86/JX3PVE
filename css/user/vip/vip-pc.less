@@ -118,6 +118,7 @@
 
 .vip-pc-buy{
 	padding:0 20px;
+	.pr;
 	.m-title{
 		.fz(13px,2.5);color:#777;
 	}
@@ -139,7 +140,7 @@
 			border:1px solid #ddd;
 			.r(3px);.fl;
 			margin-right:20px;
-			background-color:#fffdfd;
+			background-color:#f7f7f7;
 
 			span{.db;.x;}
 			small{.fz(12px);color:#666;}
@@ -155,6 +156,7 @@
 			&:hover,&.on{
 				border-color:@yel;
 				background-color:#fff;
+				color:#000;
 			}
 		}
 
@@ -210,8 +212,16 @@
 			}
 		}
 	}
-	.m-msg-true{border:1px solid @green;}
-	.m-msg-false{border:1px solid @yel;}
+	.m-msg-true{
+		border:1px solid @green;
+		padding:50px 20px;
+		.ct(x,600px);
+		top:30px;
+		box-shadow:0 0 6px #ddd;
+	}
+	.m-msg-false{
+		border:1px solid @yel;
+	}
 
 	.m-gobutton{
 		.db;.size(280px,80px);

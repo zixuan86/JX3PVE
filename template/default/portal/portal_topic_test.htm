@@ -1,11 +1,10 @@
 <!--{template common/header}-->
 <script>
-	//移动端部分页面开发完成后，如果用户使用手机访问了PC版的这个页面则跳到微信版去
 	/*if( /Android|webOS| iPhone | iPod |BlackBerry|opera mini|opera mobile|appleWebkit.*mobile|mobile/i.test(navigator.userAgent) ) {
-		window.location = 'wap.html';
+		window.location = '/vip-mobile';
 	}*/
 </script>
-<script src="http://js.jx3pve.com/js/page/vip-pc.js"></script>
+<script src="http://js.jx3pve.com/js/page/page-vip.js"></script>
 <div class="user-container user-container-vip">
 	<div id="pt" class="bm cl">
 		<div class="z">
@@ -20,7 +19,24 @@
 			<div class="bm bw0">
 				<!--{subtemplate home/vip_pc_nav}-->
 			</div>
-			<!--{subtemplate home/vip_pc}-->
+			<div class="vip-pc-container">
+				<!-- 会员头banner -->
+				<div class="block">
+					<div class="vip-pc-header">
+						<!--{block/1269}-->
+					</div>
+				</div>
+
+				<!-- 会员信息 -->
+				<!--{subtemplate home/vip_pc_header}-->
+
+				<!-- 开通会员 -->
+				<!--{subtemplate home/vip_pc_primary}-->
+
+				<!-- 会员权利 -->
+				<!--{subtemplate home/vip_pc_extend}-->
+
+			</div>
 		</div>
 		<!--{subtemplate home/sidebar_l}-->
 	</div>
