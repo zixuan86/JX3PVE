@@ -111,8 +111,10 @@ if(in_array($do, array('buy', 'exit'))) {
 		require_once libfile('function/forum');
 		if($join) {
 			$extgroupidsarray = array();
-			foreach(array_unique(array_merge($extgroupids, array($groupid))) as $extgroupid) {
-				if($extgroupid) {
+			//foreach(array_unique(array_merge($extgroupids, array($groupid))) as $extgroupid) {
+            foreach(array_unique(array_merge($extgroupids, array($_G['groupid']))) as $extgroupid) {
+				//if($extgroupid) {
+                if($extgroupid && $extgroupid != $groupid) {
 					$extgroupidsarray[] = $extgroupid;
 				}
 			}
