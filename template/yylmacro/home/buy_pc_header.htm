@@ -5,15 +5,13 @@
 		<a href="home.php" target="_blank"><!--{avatar($_G[uid],small)}--></a>
 	</div>
 	<div class="profile">
-		<ul class="baseinfo">
-			<li class="time">
-				<a class="tab-btn" href="home.php?mod=spacecp&ac=credit&op=buy">积分充值</a>
-				<a class="tab-btn" href="home.php?mod=spacecp&ac=credit&op=exchange">积分转换</a>
-				<a class="tab-btn" href="home.php?mod=spacecp&ac=credit&op=transfer">积分转账</a>
-				<a class="tab-btn" href="home.php?mod=spacecp&ac=credit&op=rule">积分规则</a>
-				<a class="tab-btn" href="home.php?mod=spacecp&ac=credit&op=log">积分记录</a>
-			</li>
-		</ul>
+		<p class="baseinfo">
+			<a class="tab-btn {if $_GET['op'] == 'buy'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=buy">积分充值</a>
+			<a class="tab-btn {if $_GET['op'] == 'exchange'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=exchange">积分转换</a>
+			<a class="tab-btn {if $_GET['op'] == 'transfer'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=transfer">积分转账</a>
+			<a class="tab-btn {if $_GET['op'] == 'rule'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=rule">积分规则</a>
+			<a class="tab-btn {if $_GET['op'] == 'log'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=log">积分记录</a>
+		</p>
 		<ul class="rights">
 			<li><em>积分：</em>$_G['member']['credits']</li>
 		<!--{eval $creditid=0;}-->

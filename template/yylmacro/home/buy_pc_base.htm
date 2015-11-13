@@ -1,0 +1,33 @@
+<!--{if $_GET['op'] == 'base'}-->
+<div class="block">
+	<h2 class="vip-pc-title">充值记录<span>Credit recent record &raquo;</span></h2>
+	<div class="buy-pc-primary vip-pc-buy">
+		<table summary="{lang memcp_credits_log_transaction}" cellspacing="0" cellpadding="0" class="dt mtm">
+			<caption>
+				<h2 class="mbm xs2">
+					<a href="home.php?mod=spacecp&ac=credit&op=log" class="xi2 xs1 xw0 y">{lang viewmore}&raquo;</a>{lang memcp_credits_log}
+				</h2>
+			</caption>
+			<tr>
+				<th>{lang operation}</th>
+				<th>{lang logs_credit}</th>
+				<th>{lang detail}</th>
+				<th>{lang changedateline}</th>
+			</tr>
+		<!--{if $loglist}-->
+			<!--{loop $loglist $value}-->
+			<!--{eval $value = makecreditlog($value, $otherinfo);}-->
+			<tr>
+				<td><!--{if $value['operation']}--><a href="home.php?mod=spacecp&ac=credit&op=log&optype=$value['operation']">$value['optype']</a><!--{else}-->$value['title']<!--{/if}--></td>
+				<td>$value['credit']</td>
+				<td><!--{if $value['operation']}-->$value['opinfo']<!--{else}-->$value['text']<!--{/if}--></td>
+				<td>$value['dateline']</td>
+			</tr>
+			<!--{/loop}-->
+		<!--{else}-->
+			<tr><td colspan="4"><p class="emp">{lang memcp_credits_log_none}</p></td></tr>
+		<!--{/if}-->
+		</table>
+	</div>
+</div>
+<!--{/if}-->
