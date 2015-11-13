@@ -2,14 +2,18 @@ H.ready(['jquery'],function(){
   jQuery(function($){
     $buyCoinsCount = $("#buyCoinsCount");
     var $priceEle = $("#addfundsform").find("span.price b");
-    $customTips = $(".tobuy-custom")
+    $customTips = $(".tobuy-custom");
     $payForm = $("#payForm");
-    
+    $tips = $("#buyCoinsWarningTips");
     var checkValue = function(){  
       var value = parseInt($buyCoinsCount.val());
-      if(isNaN(value) || value < 3000){
+      if(isNaN(value)){
         $customTips.addClass("u-error");
-        $priceEle.html("错误");
+        $priceEle.html("0");
+        return 0;
+      }
+      if(value < 3000){
+        $priceEle.html(value/100);
         return false;
       }
       $customTips.removeClass("u-error");
@@ -30,7 +34,12 @@ H.ready(['jquery'],function(){
         dataType: 'xml',
         success: function(docxml) {
           var html = $(docxml).find("root").text();
-          $("body").append($(html));
+          if(html.indexOf("form") === -1){
+            alert("请先登录");
+            location.href = "member.php?mod=logging&action=login"
+          }else{
+            $("body").append(html);
+          }
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             alert("操作失败，请刷新页面重试！");
@@ -46,6 +55,8 @@ H.ready(['jquery'],function(){
       $(this).addClass('on').siblings('label').removeClass('on');
       //检查值
       checkValue();
+      //自定义数量跟随变化
+      $("#customBuyCoinsCount").val($(this).data('coins'))
     });
     
     $("#addfundsform div.m-payway").find('label').click(function(){
@@ -58,22 +69,28 @@ H.ready(['jquery'],function(){
     
     $("#customBuyCoinsCount")
       .focus(function(){
-        $("#addfundsform").find('label').removeClass('on')
+        $("#addfundsform div.m-days").find('label').removeClass('on')
         $customTips.addClass("u-focus")
       })
       .keyup(function(){
         $buyCoinsCount.val($(this).val());
-        if(!checkValue()){
-          $buyCoinsCount.val(0)
-        }
+        checkValue();
       });
     
     $("#addfundssubmit_btn").click(function(){
-      if(!checkValue()){return;}
-      sendForm();
+      var checkResult = checkValue();
+      if(checkResult === true){
+        $tips.hide()
+        sendForm();
+        return;
+      }
+      $tips.show()
+      //填写的非数字
+      if(checkResult === 0){
+        $tips.find("b").html("请正确填写需要购买的米币数量");
+      }else{
+         $tips.find("b").html("每次购买米币数量不得低于3000个");
+      }
     });
-    
-    
-  })
-    
+  });  
 })
