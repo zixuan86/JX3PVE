@@ -1,16 +1,11 @@
 <!--{template common/header}-->
-<script>
-	/*if( /Android|webOS| iPhone | iPod |BlackBerry|opera mini|opera mobile|appleWebkit.*mobile|mobile/i.test(navigator.userAgent) ) {
-		window.location = '/vip-mobile';
-	}*/
-</script>
-<script src="http://js.jx3pve.com/js/page/page-vip.js"></script>
-<div class="user-container user-container-vip">
+<script src="http://js.jx3pve.com/js/page/page-buy.js"></script>
+<div class="user-container user-container-buy">
 	<div id="pt" class="bm cl">
 		<div class="z">
 			<a href="./" class="nvhm" title="{lang homepage}">$_G['setting']['bbname']</a> <em>&rsaquo;</em>
 			<a href="home.php">{lang useros}</a><em>&rsaquo;</em>
-			<a href="./vip">会员中心</a>
+			<a href="./buy">充值</a>
 		</div>
 	</div>
 
@@ -19,23 +14,33 @@
 			<div class="bm bw0">
 				<!--{subtemplate home/vip_pc_nav}-->
 			</div>
-			<div class="vip-pc-container">
-				<!-- 会员头banner -->
+
+			<div class="vip-pc-container buy-pc-container">
+
+				<!-- 1.充值头banner -->
 				<div class="block">
 					<div class="vip-pc-header">
-						<!--{block/1269}-->
+						<!--{block/1512}-->
 					</div>
 				</div>
 
-				<!-- 会员信息 -->
-				<!--{subtemplate home/vip_pc_header}-->
+				<!-- 2.当前积分 -->
+				<div class="block">
+					<!--{subtemplate home/buy_pc_header}-->
+				</div>
 
-				<!-- 开通会员 -->
-				<!--{subtemplate home/vip_pc_primary}-->
+				<!-- 3.积分购买（充值）页面 -->
+				<!--{subtemplate home/buy_pc_primary}-->
+				
+				<!-- 4.积分转换页面 -->
+				<!--{subtemplate home/buy_pc_exchange}-->
 
-				<!-- 会员权利 -->
-				<!--{subtemplate home/vip_pc_extend}-->
+				<!-- 5.积分转账页面 -->
+				<!--{subtemplate home/buy_pc_transfer}-->
 
+				<!-- 6.积分规则页面 -->
+				<!--{subtemplate home/buy_pc_rule}-->
+				
 			</div>
 		</div>
 		<!--{subtemplate home/sidebar_l}-->
