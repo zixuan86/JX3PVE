@@ -1,13 +1,7 @@
-<!--{if $_GET['op'] == 'base'}-->
 <div class="block">
-	<h2 class="vip-pc-title">充值记录<span>Credit recent record &raquo;</span></h2>
-	<div class="buy-pc-primary vip-pc-buy">
+	<h2 class="vip-pc-title">充值记录<span><a href="home.php?mod=spacecp&ac=credit&op=log">查看更多 &raquo;</a></span></h2>
+	<div class="buy-pc-log vip-pc-buy buy-pc-primary">
 		<table summary="{lang memcp_credits_log_transaction}" cellspacing="0" cellpadding="0" class="dt mtm">
-			<caption>
-				<h2 class="mbm xs2">
-					<a href="home.php?mod=spacecp&ac=credit&op=log" class="xi2 xs1 xw0 y">{lang viewmore}&raquo;</a>{lang memcp_credits_log}
-				</h2>
-			</caption>
 			<tr>
 				<th>{lang operation}</th>
 				<th>{lang logs_credit}</th>
@@ -28,6 +22,6 @@
 			<tr><td colspan="4"><p class="emp">{lang memcp_credits_log_none}</p></td></tr>
 		<!--{/if}-->
 		</table>
+		<a class="m-gobutton m-gobutton-buy" href="./buy">继续充值</a>
 	</div>
 </div>
-<!--{/if}-->

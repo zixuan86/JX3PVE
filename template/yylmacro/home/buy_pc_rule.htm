@@ -1,14 +1,13 @@
-<!--{if $_GET['op'] == 'rule'}-->
 <div class="block">
-{eval
-	$_TPL['cycletype'] = array(
-		'0' => '{lang one_time}',
-		'1' => '{lang everyday}',
-		'2' => '{lang the_time}',
-		'3' => '{lang interval_minutes}',
-		'4' => '{lang open_cycle}'
-	);
-}
+	{eval
+		$_TPL['cycletype'] = array(
+			'0' => '{lang one_time}',
+			'1' => '{lang everyday}',
+			'2' => '{lang the_time}',
+			'3' => '{lang interval_minutes}',
+			'4' => '{lang open_cycle}'
+		);
+	}
 	<h2 class="vip-pc-title">积分规则<span>Credit rule &raquo;</span></h2>
 	<div class="buy-pc-rule">
 		<div class="cre-tips"><!--{block/447}--></div>
@@ -40,4 +39,3 @@
 		</table>
 	</div>
 </div>
-<!--{/if}-->

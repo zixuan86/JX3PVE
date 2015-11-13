@@ -1,4 +1,3 @@
-<!--{if $_GET['op'] == 'buy'}-->
 <div class="block">
 	<h2 class="vip-pc-title">充值订单<span>Credit order &raquo;</span></h2>
 	<div class="buy-pc-primary vip-pc-buy">
@@ -39,7 +38,7 @@
 					<!-- 当自己输入时应清空选择项，当焦点时给p元素(tobuy-custom)添加.u-focus样式名-->
 					<p class="tobuy-custom">
 						<!-- 当数值少于3000时，给p元素(tobuy-custom)添加.u-error样式名 -->
-						<input class="u-text-buynum" type="text" size="5" id="customBuyCoinsCount">
+						<input class="u-text-buynum" type="text" size="5" id="customBuyCoinsCount" placeholder="自定义米币数量">
 						<!-- 根据填入的数额计算金额,当输入值少于3000时，b元素内显示为“错误” -->
 						<span class="price">¥<b id="#">30</b></span>
 					</p>
@@ -60,7 +59,11 @@
 				<!-- 当选择了支付宝方式时，显示下方提示slideDown，如选择微信不提示。暂时无需处理 -->
 				<p class="m-tips-alipay"><i class="u-icon-warning"></i>如您选择支付宝,请注意交易接口页面输入的是“<b>支付密码</b>”而非"登录密码"。</p>
 			</div>
-
+            <div class="m-msg m-msg-false" id="buyCoinsWarningTips" style="display:none">
+        		<p class="u-tips">
+					<i class="u-icon-error"></i><b>充值米币不能低于3000</b>
+				</p>
+			</div>
 			<!-- C.提交按钮 -->
 			<button class="m-gobutton m-gobutton-buy" id="addfundssubmit_btn" value="true"><em>{lang memcp_credits_addfunds}</em></button>
 
@@ -69,4 +72,3 @@
 		<!--{/if}-->
 	</div>
 </div>
-<!--{/if}-->
