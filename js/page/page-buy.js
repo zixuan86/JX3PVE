@@ -16,6 +16,7 @@ H.ready(['jquery'],function(){
         $priceEle.html(value/100);
         return false;
       }
+      $tips.hide();
       $customTips.removeClass("u-error");
       $priceEle.html(value/100);
       return true;
