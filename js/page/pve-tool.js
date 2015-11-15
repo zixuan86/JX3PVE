@@ -62,12 +62,17 @@ H.ready(['jquery','dialog','fixSidebar'],function(){
     	var $lastedit = $("#u-post-lastupdate")
     	$lastedit.text($('.c-fli-first .lastedit .e-time').text())
 
+    	//侧边栏关键词索引
+    	$("#m-hotkey-keytg").on('click',function(){
+    		$("#m-hotkey-keylist").slideToggle()
+    	})
+
 
     	//导航栏激活
 		H.curpage('.u-tool')
 
 		//侧边栏
-		H.fixSidebar('.pve-sidebar',96,105,100)
+		//H.fixSidebar('.pve-sidebar',96,105,100)
 
 		//帮助
     	H.route(54)

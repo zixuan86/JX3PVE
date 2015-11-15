@@ -8,10 +8,7 @@
 <!-- main threadlist start -->
 <!--{if !$subforumonly}-->
 <div class="threadlist">
-	<!--{if $_G['fid'] === '294'}-->
-		<!-- macro nav submodule -->
-		<!--{template common/c_macro_nav}-->
-	<!--{/if}-->
+	<!--{template forum/extend_sort}-->
 	<ul class="m-content">
 		<!--{if $_G['forum_threadcount']}-->
 			<!--{loop $_G['forum_threadlist'] $key $thread}-->

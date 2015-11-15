@@ -101,8 +101,8 @@ $(function(){
 		$(this).html(text)
 	})
 
-	$("#m-macro-nav-tg").on('click',function(){
-		$("#m-macro-nav").toggleClass('folder')
+	$("#extend-menu-tg").on('click',function(){
+		$("#extend-menu").toggleClass('folder')
 	})
 
 	//茶馆
