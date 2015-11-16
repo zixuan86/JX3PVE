@@ -64,10 +64,8 @@
 					</form>
 				</div>
 			</div>
-			<!-- URL -->
-			<div id="vip-m-nocoins" class="vip-m-msg-mini" style="display:none;">米币不足，请先<a href="#">充值</a>。</div>
-			<!-- URL -->
-			<div id="vip-m-nologin" class="vip-m-msg-mini" style="display:none;">请先<a href="#">登录</a>。</div>
+			<div id="vip-m-nocoins" class="vip-m-msg-mini" style="display:none;">米币不足，请先<a href="./buy-m">充值</a>。</div>
+			<div id="vip-m-nologin" class="vip-m-msg-mini" style="display:none;">请先<a href="./member.php?mod=logging&action=login">登录</a>。</div>
 			<button class="m-gobutton u-gobutton"  type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true"><strong>开通/续费会员</strong></button>
 		</div>
 
@@ -80,17 +78,14 @@
         		<!--{else}-->
         			<p class="ok result"><i></i>恭喜你，续费成功!</p>
         		<!--{/if}-->
-        		<!-- URL -->
-				<a class="backbtn u-gobutton" href="#">返回</a>
+				<a class="backbtn u-gobutton" href="./home-m">返回</a>
 			</div>
 
 			<!-- 开通不成功提示充值 -->
 			<div class="m-fail" id="buyVipFail" style="display:none;">
 				<p class="fail result"><i></i>余额不足</p>
-				<!-- URL -->
-				<p class="addcredit tips">您的米币不足，请先<a href="#">充值</a>。</p>
-				<!-- URL -->
-				<a class="addbtn u-gobutton" href="#">充值</a>
+				<p class="addcredit tips">您的米币不足，请先<a href="./buy-m">充值</a>。</p>
+				<a class="addbtn u-gobutton" href="./buy-m">充值</a>
 			</div>
 		</div>
 
