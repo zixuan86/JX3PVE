@@ -17,7 +17,6 @@
 			border-bottom:1px solid #ddd;
 			.fzlh(14px,40px);
 			.pr;
-			input{.pa;.lt(20px,13px);}
 			span{.db;.h(40px);.clip;}
 			.time{
 
@@ -29,11 +28,24 @@
 			}
 			&.on{
 				color:@yel;
-				background-color:#fff;
+				background:url('@{url}icon/se.gif') #fff no-repeat 10px center;
 				.bold;
 				.credit i{
 					color:#222;//.bold;
 				}
+			}
+		}
+		.tobuy-custom{
+			.pr;
+			.u-text-buynum{
+				.pa;.lt(40px,5px);
+				.fzlh(12px,28px);
+				border:1px solid #ddd;
+				.r(3px);
+				.w(120px);padding:0 10px;
+			}
+			&.u-error{
+				color:#f00;
 			}
 		}
 		.tovevip-12month{
