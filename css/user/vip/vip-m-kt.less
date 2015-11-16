@@ -8,6 +8,7 @@
 		background-color:#555;
 		color:#eee;
 		padding:10px 20px;
+		.fz(14px,24px);
 		span{color:#aaa;.fz(12px);.fr;}
 	}
 	form{
@@ -53,6 +54,10 @@
 	.fz(14px,16px);
 	p a{color:@bluex;}
 
+	.m-success,.m-fail{
+		padding:40px 0;
+	}
+
 	.ok i,.fail i{
 		.dbi;.y(top);
 		.size(16px);
@@ -79,6 +84,17 @@
 	}
 }
 
+.vip-m-msg-mini{
+	.x;
+	.fz(13px,2);
+	.color(#555,@basecolor,@blue);
+	margin-top: 10px;
+	border: 1px solid #ddd;
+	background: #fff;
+	width: 80%;.auto(x);
+	a{padding:0 5px;.bold;}
+}
+
 .u-gobutton{
 	margin:20px auto;
 	.fz(14px,40px);
@@ -89,5 +105,11 @@
 	&:hover{
 		background:lighten(@basecolor,5%);
 		color:#fff !important;
+	}
+	&.disabled{
+		background-color:#aaa;
+		&:hover{
+			background-color:#aaa;
+		}
 	}
 }

@@ -1,0 +1,103 @@
+<!--{subtemplate common/header_m}-->
+
+	<div class="vip-m-container vip-m-kt">
+
+		<header class="vip-m-header">
+			<h1 class="card card2">
+				<img src="http://img.jx3pve.com/img/vip/vip-m-kt.png" alt="开通VIP会员">
+				<span class="uid">
+					<em>UID:</em>
+					<b id="uid"><!--{echo $_G['uid']}--></b>
+				</span>
+				<span class="credit">
+					<em>CREDIT:</em>
+					<b id="credit"><!--{echo getuserprofile('extcredits4');}--></b>
+				</span>
+				<span class="ex">
+					<!--{if $_G['member']['groupid'] == 22 }-->
+					<em>有效期至:</em>
+					<b id="ex"><!--{eval echo date("Y-m-d", $_G['member']['groupexpiry']);}--></b>
+					<!--{/if}-->
+				</span>
+			</h1>
+		</header>
+
+		<!-- 默认显示开通流程 -->
+		<div class="vip-m-buy" id="vip-m-buy">
+			<div class="m-time">
+				<h3 class="m-title">请选择开通/续费时间<span>当前：<!--{echo getuserprofile('extcredits4');}--></span></h3>
+				<div class="m-days">
+					<form action="#">
+						<input type="hidden" id="cal_nowCoins" value="<!--{echo getuserprofile('extcredits4');}-->" />
+				        <input type="hidden" id="cal_needCoins" value="2880"/>
+				        <input type="hidden" id="cal_days" value="90"/>
+						<label class="tovevip-3month on" for="tovevip-3month" data-need_coins=2880>
+							<input type="radio" id="tovevip-3month" name="days" value="90" checked="checked"/>
+							<span>
+								<em class="time">3个月</em>
+								<em class="credit"><i>2880米币</i></em>
+							</span>
+						</label>
+						<label class="tovevip-6month" for="tovevip-6month" data-need_coins=5760>
+							<input type="radio" id="tovevip-6month" name="days" value="180" />
+							<span>
+								<em class="time">6个月</em>
+								<em class="credit"><i>5760米币</i></em>
+							</span>
+						</label>
+						<label class="tovevip-12month" for="tovevip-12month" data-need_coins=9216>
+							<input type="radio" id="tovevip-12month" name="days" value="360" /> 
+							<span>
+								<em class="time">12个月</em>
+								<em class="credit"><i>11520米币</i><b>9216米币</b></em>
+							</span>
+						</label>
+					</form>
+					<form class="none" id="buygroupform" >
+						<input type="hidden" name="referer" value="{echo dreferer()}" />
+						<input type="hidden" name="buysubmit" value="true" />
+						<input type="hidden" name="gid" value="$_GET[gid]" />
+						<!--{if $_G[inajax]}--><input type="hidden" name="handlekey" value="$_GET[handlekey]" /><!--{/if}-->
+						<input type="hidden" name="formhash" value="{FORMHASH}" />
+					</form>
+				</div>
+			</div>
+			<!-- URL -->
+			<div id="vip-m-nocoins" class="vip-m-msg-mini" style="display:none;">米币不足，请先<a href="#">充值</a>。</div>
+			<!-- URL -->
+			<div id="vip-m-nologin" class="vip-m-msg-mini" style="display:none;">请先<a href="#">登录</a>。</div>
+			<button class="m-gobutton u-gobutton"  type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true"><strong>开通/续费会员</strong></button>
+		</div>
+
+		<!-- 点击开通后回调结果 -->
+		<div class="vip-m-msg">
+			<!-- 开通完成后显示成功 -->
+			<div class="m-success" id="buyVipSuccess" style="display:none;">
+				<!--{if $_G['member']['groupid'] == 22 }-->
+        			<p class="ok result"><i></i>恭喜你，开通VIP成功!</p>
+        		<!--{else}-->
+        			<p class="ok result"><i></i>恭喜你，续费成功!</p>
+        		<!--{/if}-->
+        		<!-- URL -->
+				<a class="backbtn u-gobutton" href="#">返回</a>
+			</div>
+
+			<!-- 开通不成功提示充值 -->
+			<div class="m-fail" id="buyVipFail" style="display:none;">
+				<p class="fail result"><i></i>余额不足</p>
+				<!-- URL -->
+				<p class="addcredit tips">您的米币不足，请先<a href="#">充值</a>。</p>
+				<!-- URL -->
+				<a class="addbtn u-gobutton" href="#">充值</a>
+			</div>
+		</div>
+
+		<footer class="vip-m-footer">
+			&copy; <a href="http://www.jx3pve.com">www.jx3pve.com</a>
+		</footer>
+
+	</div>
+
+	<script src="http://js.jx3pve.com/js/page/page-vip-m.js"></script>
+
+<!--{subtemplate common/footer_m}-->
