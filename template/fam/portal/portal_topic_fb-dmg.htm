@@ -1,0 +1,61 @@
+<!--{template common/header}-->
+
+<link id="style_css" rel="stylesheet" type="text/css" href="{STATICURL}topic/t1/style.css?{VERHASH}">
+<style id="diy_style" type="text/css"></style>
+<link rel="stylesheet" type="text/css" href="http://css.jx3pve.com/css/zt/fb-old.css">
+
+<div class="fb-old-dmg">
+    <div class="oldfb">
+        <div class="oldfb-sidebar">
+        </div>
+
+        <div class="oldfb-content">
+            <div class="oldfb-author"><!--{block/1641}--></div>
+
+            <div class="oldfb-primary">
+                <div class="frame-tab xfs xfs_2">
+                    <div class="tab-title title">
+                        <ul class="tb">
+                            <li class="a"><a>副本介绍</a></li>
+                            <li><a>门神</a></li>
+                            <li><a>独孤问俗</a></li>
+                            <li><a>六道轮回</a></li>
+                            <li><a>剑圣</a></li>
+                            <li><a>无名</a></li>
+                            <li><a>安禄山</a></li>
+                            <li><a>伊玛目</a></li>
+                        </ul>
+                    </div>
+                    <div class="tb-c">
+                        <div class="content"><!--{block/1642}--></div>
+                        <div class="content" style="display: none;"><!--{block/1643}--></div>
+                        <div class="content" style="display: none;"><!--{block/1644}--></div>
+                        <div class="content" style="display: none;"><!--{block/1645}--></div>
+                        <div class="content" style="display: none;"><!--{block/1646}--></div>
+                        <div class="content" style="display: none;"><!--{block/1647}--></div>
+                        <div class="content" style="display: none;"><!--{block/1648}--></div>
+                        <div class="content" style="display: none;"><!--{block/1649}--></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="oldfb-cmt">
+            <!--{if $topic['allowcomment']==1}-->
+            {eval
+            $data = &$topic;
+            $common_url = "portal.php?mod=comment&id=$topicid&idtype=topicid";
+            $form_url = "portal.php?mod=portalcp&ac=comment";
+            $commentlist = portaltopicgetcomment($topicid); }
+            <!--{template portal/portal_comment}-->
+            <!--{/if}-->
+        </div>
+        <script src="misc.php?mod=diyhelp&action=get&type=topic&diy=yes&topicid=$topicid&r={echo random(4)}"
+                type="text/javascript"></script>
+        <script src="http://js.jx3pve.com/js/page/page-fb-old.js" type="text/javascript"></script>
+    </div>
+</div>
+
+<!--{template common/footer}-->
