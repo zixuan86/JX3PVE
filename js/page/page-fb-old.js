@@ -3,10 +3,11 @@ H.ready(['jquery'],function(){
 
 		var $tab = $(".tab-title li")
 		$tab.on('click',function(){
-			var i = $(this).index()
-			$tab.removeClass('a')
-			$(this).addClass('a')
-			var $ct = $(this).parent('.tab-title').next('.tb-c').find('.content')
+            var $this = $(this)
+			var i = $this.index()
+            $this.parent('.tb').find('li').removeClass('a')
+			$this.addClass('a')
+			var $ct = $(this).parent('.tb').parent('.tab-title').next('.tb-c').find('.content')
 			$ct.hide().eq(i).show()	
 		})
 
