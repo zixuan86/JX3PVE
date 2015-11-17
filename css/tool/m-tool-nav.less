@@ -1,0 +1,51 @@
+.m-tool-nav{
+	margin-bottom:20px;
+	li{
+		margin-bottom:5px;
+		background-color:#fff;
+		border:1px solid #ddd;
+		border-radius:3px;
+		a{
+			.db;.fz(12px,24px);
+			padding:5px 10px;
+
+			i{.size(24px);.dbi;.y(top);margin-right:5px;}
+
+			em{
+				.fr;
+				.fz(10px);color:#999;
+				//text-transform:uppercase;
+				letter-spacing:1px;
+				.none;
+			}
+
+			&:hover{
+				color:#049abf;
+				transition:0.15s ease-in-out;
+				em{.db;animation:fadeIn 0.2s ease-in-out;}
+			}
+		}
+		&:hover{
+			background-color:#f7f7f7;
+			box-shadow: 0 0 2px #eee inset;
+		}
+		.keyboard i{
+			background:url('@{url}tool/keyboard.png') no-repeat 0 0;
+		}
+		.role i{
+			background:url('@{url}tool/role.png') no-repeat 0 0;
+		}
+		.tool i{
+			background:url('@{url}tool/tool.png') no-repeat 0 0;
+		}
+		.source i{
+			background:url('@{url}tool/source.png') no-repeat 0 0;
+		}
+		.plugins i{
+			background:url('@{url}tool/plugin.png') no-repeat 0 0;
+		}
+		.book i{
+			background:url('@{url}tool/book.png') no-repeat 0 0;
+		}
+	}
+}

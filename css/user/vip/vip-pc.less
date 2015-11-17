@@ -78,13 +78,20 @@
 					color:#f00;
 					em{color:#999;.di;}
 				}
-				.tab-btn{.color(@bluex,#c00);margin-right:10px;}
+			}
+			.tab-btn{
+				.color(@bluex,#c00);margin-right:10px;
+				&.on{
+					padding:5px 10px;background-color:#f2f2f2;
+				}
 			}
 		}
 		.rights{
-			color:#777;
+			.clearfix;
+			color:#555;
 			li{
 				.fl;margin-right:15px;
+				em{color:#777;}
 			}
 			i{.size(14px,12px);.dbi;background-repeat:no-repeat;background-position:center center;}
 			.true{background-image:url('@{url}icon/data_valid.gif');}
@@ -224,6 +231,7 @@
 	}
 
 	.m-gobutton{
+		.x;
 		.db;.size(280px,80px);
 		margin:20px auto;
 		color:#fff;

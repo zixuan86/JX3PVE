@@ -1,0 +1,28 @@
+.c-showbox{
+	background-color:#fff;
+	border:1px solid #ccc;
+	box-shadow: 0 0 5px rgba(0,0,0,.5);
+	.r(6px);
+	max-width:80%;max-height:80%;
+	padding:28px;
+	
+	.none;
+
+	&.c-showbox-show{
+		.pf;.lt(50%,50%);.z(800);
+	}
+}
+.c-showbox-content{
+	.full;
+	overflow:hidden;
+	img{.db;max-width:100%;max-height:100%;.auto(x);}
+}
+
+.c-showbox-close{
+	.pa;.lt(100%,0);margin-left:10px;
+	.size(64px);.db;.pointer;
+	background:url('@{url}custom/close.png') no-repeat 0 0;
+	&:hover{
+		animation:rotateHalf 0.5s ease-in-out;
+	}
+}

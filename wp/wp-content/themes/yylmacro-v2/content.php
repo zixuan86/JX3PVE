@@ -88,7 +88,7 @@
 										| <a href="http://www.jx3pve.com/wp-admin/post-new.php" target="_blank" title="发布新宏">发布新宏</a> 
 										| <a href="http://www.jx3pve.com/wp-admin/edit.php" target="_blank" title="我的作品">我的作品</a> 
 										| <a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=password" target="_blank" title="">修改密码</a> 
-										| <a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=jx3" target="_blank" title="个人中心">个人中心</a>
+										| <a href="home.php" target="_blank" title="个人中心">个人中心</a>
 										| <a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=plugin&id=cloudid:cloudid" target="_blank" title="云端ID修改申请">云端ID修改</a>
 										| <a href="http://www.jx3pve.com/forum.php?mod=group&action=create" class="redtips" target="_blank" title="创建作者专栏">创建专栏</a>
 										</span>

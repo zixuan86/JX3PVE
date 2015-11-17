@@ -275,7 +275,7 @@
 											<button type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true" class="user-vip-btnbuy">
 												<strong>开通/续费</strong>
 											</button>
-											<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=credit&op=buy" target="_blank" class="user-vip-btncre"><b>充 值</b></a>
+											<a href="./buy" target="_blank" class="user-vip-btncre"><b>充 值</b></a>
 										</li> 
 									</ul>
 								</div>

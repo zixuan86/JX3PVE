@@ -101,6 +101,10 @@ $(function(){
 		$(this).html(text)
 	})
 
+	$("#extend-menu-tg").on('click',function(){
+		$("#extend-menu").toggleClass('folder')
+	})
+
 	//茶馆
 	var $bookdown = $(".bookdown"),
 		$isdown = $("#isdownload")

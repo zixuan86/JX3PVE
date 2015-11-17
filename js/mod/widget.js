@@ -13,9 +13,7 @@ H.ready(['jquery'], function(){
             $index_tg = $("#w-index-tg"),
             $index = $("#w-index-list"),
             $filter = $("#w-filter .w-filter-font .item .label"),
-            $filter_tg = $("#w-filter-tg"),
-            $imgorigin = $(".u-imgorigin"),
-            $mask = $("#u-mask")
+            $filter_tg = $("#w-filter-tg")
             
 
     	//w_weibo:新浪微博
@@ -82,26 +80,38 @@ H.ready(['jquery'], function(){
         })
 
         //查看脸型原图 imgorigin
+        var
+        $imgorigin = $(".u-imgorigin"),
+        $mask = $("#u-mask"),
+        $showbox = $("#c-showbox"),
+        $boxclose = $("#c-showbox-close"),
+        $imgbox = $("#c-showbox-content")
         $imgorigin.on('click',function(){
             var img = $(this).find('img'),
                 src = img.attr('src')
             if(src && src.indexOf('nophoto')==-1){
-                $mask.show()
+                $mask.fadeIn()
                 $html.addClass('fixpage')
-                $body.append('<img class="u-imgorigin-fix" src="'+ src + '"/>')
-                var _img = $(".u-imgorigin-fix"),
-                    w = parseInt(_img.width())/2,
-                    h = parseInt(_img.height())/2
-                    _img.css('margin-left',-w)
-                        .css('margin-top',-h)
+                $imgbox.append('<img id="c-showbox-img" src="'+ src + '"/>')
+                var box_w = $showbox.outerWidth(),
+                    box_h = $showbox.outerHeight(),
+                    ct_w = $showbox.width(),
+                    ct_h = $showbox.height(),
+                    offset_x = -box_w/2,
+                    offset_y = -box_h/2
+                $imgbox.height(ct_h).width(ct_w)
+                $showbox.fadeIn().addClass('c-showbox-show').css({
+                    'margin-left': offset_x,
+                    'margin-top': offset_y
+                })
             }
         })
         //脸型原图
-        $mask.on('click',function(){
-            var $imgoriginfix = $(".u-imgorigin-fix")
-            $mask.hide()
-            $imgoriginfix.remove()
+        $boxclose.add($mask).on('click',function(){
+            $mask.fadeOut()
             $html.removeClass('fixpage')
+            $showbox.fadeOut()
+            $('#c-showbox-img').remove()
         })
 
     })
