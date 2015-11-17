@@ -1,0 +1,67 @@
+<!--{template common/header}-->
+
+<link id="style_css" rel="stylesheet" type="text/css" href="{STATICURL}topic/t1/style.css?{VERHASH}">
+<style id="diy_style" type="text/css"></style>
+<link rel="stylesheet" type="text/css" href="http://css.jx3pve.com/css/zt/fb-old.css">
+
+<div class="fb-old-dhhs">
+    <div class="oldfb">
+        <div class="oldfb-sidebar">
+        </div>
+
+        <div class="oldfb-content">
+            <div class="oldfb-author"><!--{block/1571}--></div>
+
+            <div class="oldfb-primary">
+                <div class="frame-tab">
+                    <div class="tab-title title">
+                        <ul class="tb">
+                            <li class="a"><a>副本介绍</a></li>
+                            <li><a>副本截图</a></li>
+                        </ul>
+                    </div>
+                    <div class="tb-c">
+                        <div class="content"><!--{block/1572}--></div>
+                        <div class="content" style="display: none;"><!--{block/1573}--></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="oldfb-primary">
+                <div class="frame-tab">
+                    <div class="tab-title title">
+                        <span style="float: left;padding: 0px 20px;">BOSS攻略</span>
+                        <ul class="tb">
+                            <li class="a"><a>1号首领巫医水烟</a></li>
+                            <li><a>2号首领索罗斯</a></li>
+                            <li><a>3号首领提坦德·亚罗</a></li>
+                            <li><a>4号首领牡丹</a></li>
+                        </ul>
+                    </div>
+                    <div class="tb-c">
+                        <div class="content"><!--{block/1574}--></div>
+                        <div class="content" style="display: none;"><!--{block/1575}--></div>
+                        <div class="content" style="display: none;"><!--{block/1576}--></div>
+                        <div class="content" style="display: none;"><!--{block/1577}--></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="oldfb-cmt">
+            <!--{if $topic['allowcomment']==1}-->
+            {eval
+            $data = &$topic;
+            $common_url = "portal.php?mod=comment&id=$topicid&idtype=topicid";
+            $form_url = "portal.php?mod=portalcp&ac=comment";
+            $commentlist = portaltopicgetcomment($topicid); }
+            <!--{template portal/portal_comment}-->
+            <!--{/if}-->
+        </div>
+        <script src="misc.php?mod=diyhelp&action=get&type=topic&diy=yes&topicid=$topicid&r={echo random(4)}"
+                type="text/javascript"></script>
+        <script src="http://js.jx3pve.com/js/page/page-fb-old.js" type="text/javascript"></script>
+    </div>
+</div>
+
+<!--{template common/footer}-->

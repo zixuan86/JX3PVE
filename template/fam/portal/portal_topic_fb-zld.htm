@@ -1,0 +1,77 @@
+<!--{template common/header}-->
+
+<link id="style_css" rel="stylesheet" type="text/css" href="{STATICURL}topic/t1/style.css?{VERHASH}">
+<style id="diy_style" type="text/css"></style>
+<link rel="stylesheet" type="text/css" href="http://css.jx3pve.com/css/zt/fb-old.css">
+
+<div class="fb-old-zld">
+    <div class="oldfb">
+        <div class="oldfb-sidebar">
+        </div>
+
+        <div class="oldfb-content">
+            <div class="oldfb-author"><!--{block/1604}--></div>
+
+            <div class="oldfb-primary">
+                <div class="frame-tab">
+                    <div class="tab-title title">
+                        <ul class="tb">
+                            <li class="a"><a>副本简介</a></li>
+                            <li><a>外观整理</a></li>
+                            <li><a>相关成就</a></li>
+                            <li><a>挂件整理</a></li>
+                        </ul>
+                    </div>
+                    <div class="tb-c">
+                        <div class="content"><!--{block/1605}--></div>
+                        <div class="content" style="display: none;"><!--{block/1606}--></div>
+                        <div class="content" style="display: none;"><!--{block/1607}--></div>
+                        <div class="content" style="display: none;"><!--{block/1608}--></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="oldfb-primary">
+                <div class="frame-tab">
+                    <div class="tab-title title">
+                        <span style="float: left;padding: 0px 20px;">BOSS攻略</span>
+                        <ul class="tb">
+                            <li class="a"><a>鼠王，蝠王</a></li>
+                            <li><a>铁面将军陆寻</a></li>
+                            <li><a>圣童索迪尔</a></li>
+                            <li><a>南之雷神</a></li>
+                            <li><a>星宿老仙</a></li>
+                            <li><a>乌蒙贵</a></li>
+                            <li><a>天蛛老人</a></li>
+                        </ul>
+                    </div>
+                    <div class="tb-c">
+                        <div class="content"><!--{block/1609}--></div>
+                        <div class="content" style="display: none;"><!--{block/1610}--></div>
+                        <div class="content" style="display: none;"><!--{block/1611}--></div>
+                        <div class="content" style="display: none;"><!--{block/1612}--></div>
+                        <div class="content" style="display: none;"><!--{block/1613}--></div>
+                        <div class="content" style="display: none;"><!--{block/1614}--></div>
+                        <div class="content" style="display: none;"><!--{block/1615}--></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="oldfb-cmt">
+            <!--{if $topic['allowcomment']==1}-->
+            {eval
+            $data = &$topic;
+            $common_url = "portal.php?mod=comment&id=$topicid&idtype=topicid";
+            $form_url = "portal.php?mod=portalcp&ac=comment";
+            $commentlist = portaltopicgetcomment($topicid); }
+            <!--{template portal/portal_comment}-->
+            <!--{/if}-->
+        </div>
+        <script src="misc.php?mod=diyhelp&action=get&type=topic&diy=yes&topicid=$topicid&r={echo random(4)}"
+                type="text/javascript"></script>
+        <script src="http://js.jx3pve.com/js/page/page-fb-old.js" type="text/javascript"></script>
+    </div>
+</div>
+
+<!--{template common/footer}-->

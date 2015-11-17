@@ -1,0 +1,52 @@
+<!--{template common/header}-->
+
+<link id="style_css" rel="stylesheet" type="text/css" href="{STATICURL}topic/t1/style.css?{VERHASH}">
+<style id="diy_style" type="text/css"></style>
+<link rel="stylesheet" type="text/css" href="http://css.jx3pve.com/css/zt/fb-old.css">
+
+<div class="fb-old-dhdk">
+    <div class="oldfb">
+        <div class="oldfb-sidebar">
+        </div>
+
+        <div class="oldfb-content">
+            <div class="oldfb-author"><!--{block/1578}--></div>
+
+            <div class="oldfb-primary">
+                <div class="frame-tab">
+                    <div class="tab-title title">
+                        <ul class="tb">
+                            <li class="a"><a>副本简介</a></li>
+                            <li><a>视频与攻略</a></li>
+                            <li><a>外观截图</a></li>
+                            <li><a>金蛇残片</a></li>
+                        </ul>
+                    </div>
+                    <div class="tb-c">
+                        <div class="content"><!--{block/1579}--></div>
+                        <div class="content" style="display: none;"><!--{block/1580}--></div>
+                        <div class="content" style="display: none;"><!--{block/1581}--></div>
+                        <div class="content" style="display: none;"><!--{block/1582}--></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="oldfb-cmt">
+            <!--{if $topic['allowcomment']==1}-->
+            {eval
+            $data = &$topic;
+            $common_url = "portal.php?mod=comment&id=$topicid&idtype=topicid";
+            $form_url = "portal.php?mod=portalcp&ac=comment";
+            $commentlist = portaltopicgetcomment($topicid); }
+            <!--{template portal/portal_comment}-->
+            <!--{/if}-->
+        </div>
+        <script src="misc.php?mod=diyhelp&action=get&type=topic&diy=yes&topicid=$topicid&r={echo random(4)}"
+                type="text/javascript"></script>
+        <script src="http://js.jx3pve.com/js/page/page-fb-old.js" type="text/javascript"></script>
+    </div>
+</div>
+
+<!--{template common/footer}-->
