@@ -55,7 +55,6 @@ jQuery(function($) {
     $showVIPDateB = $(".vip-m-container").find("b#ex");
   
     var updateVIPDateB = function(days){
-      console.log(days, $showVIPDateB.html());
       var days = parseInt($buyDays.val());
       var now =  new Date($showVIPDateB.html()).getTime();
       var expireTime = now + days * 24 * 60 * 60 * 1000;
