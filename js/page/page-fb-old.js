@@ -6,7 +6,7 @@ H.ready(['jquery'],function(){
 			var i = $(this).index()
 			$tab.removeClass('a')
 			$(this).addClass('a')
-			var $ct = $(this).parent('.tab-title').next('.tb-c').find('.content')
+			var $ct = $(this).parent('.tb').parent('.tab-title').next('.tb-c').find('.content')
 			$ct.hide().eq(i).show()	
 		})
 
