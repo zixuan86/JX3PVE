@@ -8,6 +8,7 @@
 		background-color:#555;
 		color:#eee;
 		padding:10px 20px;
+		.fz(14px,24px);
 		span{color:#aaa;.fz(12px);.fr;}
 	}
 	form{
@@ -16,7 +17,6 @@
 			border-bottom:1px solid #ddd;
 			.fzlh(14px,40px);
 			.pr;
-			input{.pa;.lt(20px,13px);}
 			span{.db;.h(40px);.clip;}
 			.time{
 
@@ -28,11 +28,24 @@
 			}
 			&.on{
 				color:@yel;
-				background-color:#fff;
+				background:url('@{url}icon/se.gif') #fff no-repeat 10px center;
 				.bold;
 				.credit i{
 					color:#222;//.bold;
 				}
+			}
+		}
+		.tobuy-custom{
+			.pr;
+			.u-text-buynum{
+				.pa;.lt(40px,5px);
+				.fzlh(12px,28px);
+				border:1px solid #ddd;
+				.r(3px);
+				.w(120px);padding:0 10px;
+			}
+			&.u-error{
+				color:#f00;
 			}
 		}
 		.tovevip-12month{
@@ -52,6 +65,10 @@
 	.x;
 	.fz(14px,16px);
 	p a{color:@bluex;}
+
+	.m-success,.m-fail{
+		padding:40px 0;
+	}
 
 	.ok i,.fail i{
 		.dbi;.y(top);
@@ -79,6 +96,17 @@
 	}
 }
 
+.vip-m-msg-mini{
+	.x;
+	.fz(13px,2);
+	.color(#555,@basecolor,@blue);
+	margin-top: 10px;
+	border: 1px solid #ddd;
+	background: #fff;
+	width: 80%;.auto(x);
+	a{padding:0 5px;.bold;}
+}
+
 .u-gobutton{
 	margin:20px auto;
 	.fz(14px,40px);
@@ -89,5 +117,11 @@
 	&:hover{
 		background:lighten(@basecolor,5%);
 		color:#fff !important;
+	}
+	&.disabled{
+		background-color:#aaa;
+		&:hover{
+			background-color:#aaa;
+		}
 	}
 }
