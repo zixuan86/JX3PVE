@@ -42,6 +42,8 @@ jQuery(function($){
                   alert("请先登录");
                   location.href = "member.php?mod=logging&action=login"
                 }else{
+                  html = html.replace("$('payform')", "$('#payform')")
+                  console.log(html);
                   $("body").append(html);
                 }
             },
