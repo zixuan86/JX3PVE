@@ -54,11 +54,18 @@ jQuery(function($){
     };
 
     $("#addfundsform div.m-credits").find('label').click(function(){
+        
+        //切换样式
+        $(this).addClass('on').siblings('label').removeClass('on');
+      
+        //如果是自定义输入米币则返回
+        if($(this).hasClass('tobuy-custom')){
+          return;
+        }
+        //隐藏自定义
         $customTips.removeClass("u-focus");
         //设置所购米币隐藏字段
         $buyCoinsCount.val($(this).data('coins'));
-        //切换样式
-        $(this).addClass('on').siblings('label').removeClass('on');
         //检查值
         checkValue();
         //自定义数量跟随变化
@@ -75,7 +82,6 @@ jQuery(function($){
 
     $("#customBuyCoinsCount")
     .focus(function(){
-        $("#addfundsform div.m-days").find('label').removeClass('on')
         $customTips.addClass("u-focus")
     })
     .keyup(function(){
