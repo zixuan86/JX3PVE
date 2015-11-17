@@ -37,11 +37,29 @@
 	.fb-qhl-top{height:300px;}
 
 	.fb-qhl-primary,.fb-qhl-cmt{width:732px;background:#252525;margin:10px auto;}
+
 	.fb-qhl-cmt,.fb-qhl-author{border:1px solid #555;}
-	.fb-qhl-cmt #comment.bm {border:none;background:#252525;}
+	.fb-qhl-cmt #comment.bm {border:none;background:#252525;padding:10px;}
 	.fb-qhl-cmt .bm_h.cl{display:none;}
 	.fb-qhl-cmt .portal-cmtbox.tedt,.fb-qhl-cmt  .portal-cmtarea {width:600px;}
-	.fb-qhl-cmt  .portal-cmtli{width:640px;}
+	.fb-qhl-cmt{
+		color:#666;
+		.quote{
+		    background-color: #222 !important;
+		    color: #888;
+		    border: 1px solid #444 !important;
+		    padding: 10px !important;
+		    margin: 5px;
+		} 
+	}
+	.fb-qhl-cmt .portal-cmtli{
+		width:640px;
+		margin-left:68px;
+		.color(#777,@blue,lighten(@blue,5%));
+	}
+	.fb-qhl-cmt .ptm .xi2{
+		.color(@blue,lighten(@blue,10%));
+	}
 	.fb-qhl-cmt {color:#888;}
 	.fb-qhl-cmt .portal-cmt .bbda {border-bottom:1px dotted #444;}
 	.fb-qhl-cmt .portal-cmbt{background: url("@{url}fb/qhl/portal-cmtbt.png") no-repeat left top;cursor:pointer;vertical-align: middle;width:70px;height: 28px;overflow: hidden;border-radius: 4px;border:none;font-weight: bold;float:right;margin-right:8px;margin-top:-6px;} 
