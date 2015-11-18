@@ -10,7 +10,7 @@
  */
 ?>
 <div class="wp-footer">
-	<iframe src="http://www.jx3pve.com/jx3/iframe/footer/" height="89px" width="100%"></iframe>
+	<iframe src="http://www.jx3pve.com/iframe/footer" height="89px" width="100%"></iframe>
 </div>
 </body>
 </html>
