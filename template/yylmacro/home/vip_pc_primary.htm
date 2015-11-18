@@ -47,7 +47,7 @@
 		<!-- Step2.点击开通按钮 -->
 		<button class="m-gobutton"  type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true"><strong>开通/续费会员</strong></button>
 
-		<!-- Step3.回调提示 -->
+		<!-- Step3.回调提示 米币不足-->
 		<div class="m-msg m-msg-false" id="buyVipFail" style="display:none;">
 			<div class="m-msg-error-mod1">
 				<p class="u-tips">
@@ -57,14 +57,19 @@
 					<a class="skip" href="misc.php?mod=faq&action=faq&id=1&messageid=30" target="_blank">（如何赚米币？）</a></p>
 				<a class="u-crebtn" href="./buy" target="_blank">充值</a>
 			</div>
-			<div class="m-msg-error-mod2" style="display:none;">
-				<p class="u-tips">
-					<i class="u-icon-error"></i><b>异常错误</b>
-				</p>
-				<p class="u-tips">错误代码（ABCD），请<a href="./vip">刷新页面</a>重试。</p>
-				<p class="u-tips">如果反复出现，请至<a href="./feedback" target="_blank">反馈中心</a>提交给我们。</p>
+		</div>
+       <!-- Step3.回调提示 其他类型错误-->
+        <div class="m-msg m-msg-false" id="buyVipOtherFail" style="display:none;">
+            <div class="m-msg-error-mod2">
+              <p class="u-tips">
+                  <i class="u-icon-error"></i><b>异常错误</b>
+              </p>
+              <p class="u-tips">错误代码（<span id="errorCode"></span>），请<a href="./vip">刷新页面</a>重试。</p>
+              <p class="u-tips">如果反复出现，请至<a href="./feedback" target="_blank">反馈中心</a>提交给我们。</p>
 			</div>
 		</div>
+         			
+       
         <div class="m-msg m-msg-true" id="buyVipSuccess" style="display:none;">
         	<p class="u-tips">
         		<i class="u-icon-success"></i>
