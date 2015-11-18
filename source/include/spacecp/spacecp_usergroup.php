@@ -128,6 +128,8 @@ if(in_array($do, array('buy', 'exit'))) {
 				//用户选择一年这打8折
 				if ($days == 360) {
 					$amount = intval(($days * $group['dailyprice']) * 0.8);
+				} else {
+					$amount = ($days * $group['dailyprice']);
 				}
 				
 				if($space['extcredits'.$creditstrans] - $amount < ($minbalance = 0)) {

@@ -10,6 +10,7 @@ jQuery(function($) {
     var uid = parseInt($("#uid").text())
     var buyVipFail = $("#buyVipFail")
     var buyVipSuccess = $("#buyVipSuccess")
+    var buyVipOtherFail = $("#buyVipOtherFail")
     var buyPrimary  = $("#vip-m-buy")
 
     
@@ -80,7 +81,8 @@ jQuery(function($) {
     //提交表单
     var $submitForm = $("form#buygroupform");
     $btn.click(function(){
-
+        buyVipOtherFail.hide();
+        
         //判断米币不足
     　  if(!judgeCoinsEnough()){return;}
 
