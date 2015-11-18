@@ -52,17 +52,29 @@ jQuery(function($) {
 
     });
   
+    $showVIPDateSpan = $(".vip-m-container").find("span.ex")
     $showVIPDateB = $(".vip-m-container").find("b#ex");
   
     var updateVIPDateB = function(days){
       var days = parseInt($buyDays.val());
-      var now =  new Date($showVIPDateB.html()).getTime();
+      var now = 0;
+      //如果原来没有开通VIP,从当前时间开始计算
+      if(!$showVIPDateB[0]){
+        now = new Date().getTime();
+      }else{
+        now = new Date($showVIPDateB.html()).getTime();
+      }
       var expireTime = now + days * 24 * 60 * 60 * 1000;
       var expireDate = new Date(expireTime);
       var year = expireDate.getFullYear();
       var month = expireDate.getMonth() + 1;
       var day = expireDate.getDate();
-      $showVIPDateB.html(year + "-" + month + "-" + day);
+      var toDate = year + "-" + month + "-" + day
+      if($showVIPDateB[0]){
+        $showVIPDateB.html(toDate);
+      }else{
+        $showVIPDateSpan.html("<em>有效期至:</em><b id='ex'>"+toDate+"</b>")
+      }
     };
     
     //提交表单
