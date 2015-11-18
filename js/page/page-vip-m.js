@@ -38,7 +38,8 @@ jQuery(function($) {
     $(".m-days").find('label').click(function(){
         //设置所需米币隐藏字段
         $needCoins.val($(this).data('need_coins'));
-        
+        //设置隐藏天数
+        $buyDays.val($(this).data('buy_days'))
         //切换样式
         $(this).addClass('on')
           .siblings('label').removeClass('on')
@@ -50,9 +51,22 @@ jQuery(function($) {
         judgeCoinsEnough();
 
     });
+  
+    $showVIPDateB = $(".vip-m-container").find("b#ex");
+  
+    var updateVIPDateB = function(days){
+      var days = parseInt($buyDays.val());
+      var now =  new Date($showVIPDateB.html()).getTime();
+      var expireTime = now + days * 24 * 60 * 60 * 1000;
+      var expireDate = new Date(expireTime);
+      var year = expireDate.getFullYear();
+      var month = expireDate.getMonth() + 1;
+      var day = expireDate.getDate();
+      $showVIPDateB.html(year + "-" + month + "-" + day);
+    };
     
     //提交表单
-    var $submitForm = $("form#buygroupform")
+    var $submitForm = $("form#buygroupform");
     $btn.click(function(){
 
         //判断米币不足
@@ -71,8 +85,10 @@ jQuery(function($) {
         $.post(url, data, function(result){
           result = result ? JSON.parse(result) : {};
           if(result.code === 1){
-            buyPrimary.slideUp(600)
-            buyVipSuccess.slideDown(600)
+            buyPrimary.slideUp(600);
+            buyVipSuccess.slideDown(600);
+            //更新显示时间
+            updateVIPDateB($buyDays.val());
           }else{
             buyPrimary.slideUp(600)
             buyVipFail.slideDown(600)
