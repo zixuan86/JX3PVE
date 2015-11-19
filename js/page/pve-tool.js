@@ -38,8 +38,8 @@ H.ready(['jquery','dialog'],function(){
 		})
 
 		//下载次数
-		/*var down_count = $("#postlist table:first").find('.pls').children('.hm').find('.xi1').eq(0).text()
-		$("#tool-down-count").text(down_count)*/
+		var down_count = $("#postlist table:first").find('.pls').children('.hm').find('.xi1').eq(0).text()
+		$("#tool-down-count").text(down_count)
 
 
 		//非必填字段为空隐藏
