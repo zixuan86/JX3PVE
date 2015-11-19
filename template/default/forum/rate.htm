@@ -46,7 +46,9 @@
 					</tr>
 				<!--{/loop}-->
 			</table>
-			<script src="http://js.jx3pve.com/js/mod/rate.js" type="text/javascript" charset="utf-8"  async defer></script>
+			<script type="text/javascript" charset="utf-8"  async defer>
+				jQuery('#rateform .c td:contains("米币")').addClass('mibi').html('米币'+'<em>打赏</em>')
+			</script>
 			<div class="tpclg">
 				<h4>{lang user_operation_explain}:</h4>
 				<table cellspacing="0" cellpadding="0" class="reason_slct">
