@@ -263,9 +263,13 @@ function showsorttemplate($sortid, $fid, $sortoptionarray, $templatearray, $thre
 					$sortthread['value'] = "forum.php?mod=attachment&aid=".aidencode($faceoptiondata['aid']);
 					$attach = C::t('forum_attachment')->fetch($faceoptiondata['aid']);
 					$sortthread['downloads'] =  $attach['downloads'];
+					$attach_ext =  C::t('forum_attachment_n')->fetch('aid:'.$faceoptiondata['aid'],$faceoptiondata['aid']);
+					$sortthread['price'] =  $attach_ext['price'];		
 				}
 				$sortthreadlist[$tid][$arrayoption['title']] = $_G['optionvaluelist'][$sortid][$tid][$arrayoption['identifier']]['value'] = $sortthread['value'] ? $sortthread['value'] : './static/image/common/nophotosmall.gif';
 				$_G['optionvaluelist'][$sortid][$tid][$arrayoption['identifier']]['downloads'] = $sortthread['downloads'];
+				$_G['optionvaluelist'][$sortid][$tid][$arrayoption['identifier']]['price'] = $sortthread['price'];
+
 
 			} else {
 				$sortthreadlist[$tid][$arrayoption['title']] = $_G['optionvaluelist'][$sortid][$tid][$arrayoption['identifier']]['value'] = $sortthread['value'] ? $sortthread['value'] : $arrayoption['defaultvalue'];
@@ -297,7 +301,9 @@ function showsorttemplate($sortid, $fid, $sortoptionarray, $templatearray, $thre
 					$searchunit[$sortid][] = '/\[('.$option['identifier'].')unit\]/e';
 					$searchunit[$sortid][] = '/{('.$option['identifier'].')_unit}/e';
 					$searchdownloads[$sortid][] = '/\[('.$option['identifier'].')downloads\]/e';
-					$searchdownloads[$sortid][] = '/{('.$option['identifier'].')_downloads}/e';					
+					$searchdownloads[$sortid][] = '/{('.$option['identifier'].')_downloads}/e';		
+					$searchprice[$sortid][] = '/\[('.$option['identifier'].')price\]/e';
+					$searchprice[$sortid][] = '/{('.$option['identifier'].')_price}/e';						
 				}
 			}
 		}
@@ -317,6 +323,8 @@ function showsorttemplate($sortid, $fid, $sortoptionarray, $templatearray, $thre
 			$stemplate[$sortid][$tid] = preg_replace($searchvalue[$sortid], "showlistoption('\\1', 'value', '$tid', '$sortid')", $stemplate[$sortid][$tid]);
 			$stemplate[$sortid][$tid] = preg_replace($searchunit[$sortid], "showlistoption('\\1', 'unit', '$tid', '$sortid')", $stemplate[$sortid][$tid]);
 			$stemplate[$sortid][$tid] = preg_replace($searchdownloads[$sortid], "showlistoption('\\1', 'downloads', '$tid', '$sortid')", $stemplate[$sortid][$tid]);
+			$stemplate[$sortid][$tid] = preg_replace($searchprice[$sortid], "showlistoption('\\1', 'price', '$tid', '$sortid')", $stemplate[$sortid][$tid]);
+
 		}
 	}
 
@@ -495,6 +503,8 @@ function threadsortshow($sortid, $tid) {
 						$_G['forum_option'][$option['identifier']]['value'] = "forum.php?mod=attachment&aid=".aidencode($faceoptiondata['aid']);
 						$attach = C::t('forum_attachment')->fetch($faceoptiondata['aid']);
 						$_G['forum_option'][$option['identifier']]['downloads'] =  $attach['downloads'];
+						$attach_ext =  C::t('forum_attachment_n')->fetch('aid:'.$faceoptiondata['aid'],$faceoptiondata['aid']);
+						$_G['forum_option'][$option['identifier']]['price'] =  $attach_ext['price'];
 						$threadsortshow['sortaids'][] = $faceoptiondata['aid'];
 					}  elseif($option['type'] == 'url') {
 						$_G['forum_option'][$option['identifier']]['value'] = $optiondata[$optionid]['value'] ? "<a href=\"".$optiondata[$optionid]['value']."\" target=\"_blank\">".$optiondata[$optionid]['value']."</a>" : '';
@@ -533,6 +543,8 @@ function threadsortshow($sortid, $tid) {
 				$searchunit[] = '/{('.$option['identifier'].')_unit}/e';
 				$searchdownloads[] = '/\[('.$option['identifier'].')downloads\]/e';
 				$searchdownloads[] = '/{('.$option['identifier'].')_downloads}/e';
+				$searchprice[] = '/\[('.$option['identifier'].')price\]/e';
+				$searchprice[] = '/{('.$option['identifier'].')_price}/e';		
 			}
 
 			$threadexpiration = $sortdataexpiration ? dgmdate($sortdataexpiration) : lang('forum/misc', 'never_expired');
@@ -541,6 +553,7 @@ function threadsortshow($sortid, $tid) {
 			$typetemplate = preg_replace($searchvalue, "showoption('\\1', 'value')", $typetemplate);
 			$typetemplate = preg_replace($searchunit, "showoption('\\1', 'unit')", $typetemplate);
 			$typetemplate = preg_replace($searchdownloads, "showoption('\\1', 'downloads')", $typetemplate);
+			$typetemplate = preg_replace($searchprice, "showoption('\\1', 'price')", $typetemplate);
 
 			$typetemplate =str_replace("{vanfon_uid}", $vanfon_uid, $typetemplate);
 			$typetemplate =str_replace("{vanfon_pid}", $vanfon_tid, $typetemplate);
