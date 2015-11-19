@@ -110,6 +110,7 @@ class block_thread extends discuz_block {
 					array('views', 'threadlist_orderby_views'),
 					array('heats', 'threadlist_orderby_heats'),
 					array('recommends', 'threadlist_orderby_recommends'),
+					array('lastedit', 'threadlist_orderby_lastedit'),
 				),
 				'default' => 'lastpost'
 			),
@@ -255,7 +256,7 @@ class block_thread extends discuz_block {
 		$items		= !empty($parameter['items']) ? intval($parameter['items']) : 10;
 		$digest		= isset($parameter['digest']) ? $parameter['digest'] : 0;
 		$stick		= isset($parameter['stick']) ? $parameter['stick'] : 0;
-		$orderby	= isset($parameter['orderby']) ? (in_array($parameter['orderby'],array('lastpost','dateline','replies','views','heats','recommends')) ? $parameter['orderby'] : 'lastpost') : 'lastpost';
+		$orderby	= isset($parameter['orderby']) ? (in_array($parameter['orderby'],array('lastpost','dateline','replies','views','heats','recommends','lastedit')) ? $parameter['orderby'] : 'lastpost') : 'lastpost';
 		$lastpost	= isset($parameter['lastpost']) ? intval($parameter['lastpost']) : 0;
 		$postdateline	= isset($parameter['postdateline']) ? intval($parameter['postdateline']) : 0;
 		$titlelength	= !empty($parameter['titlelength']) ? intval($parameter['titlelength']) : 40;
