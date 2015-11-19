@@ -1,8 +1,8 @@
-H.ready(['jquery', 'fixSidebar','treeview'], function() {
+H.ready(['jquery'], function() {
 	jQuery(function($) {
 
 		//树形菜单
-		$("#jx3pve-map").treeview();
+		//$("#jx3pve-map").treeview();
 
 		//导航栏激活
 		H.curpage('.u-bbs')

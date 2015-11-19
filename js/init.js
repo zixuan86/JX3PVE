@@ -68,6 +68,6 @@ H.ready('jquery',function(){
 
 	jQuery(function($){
 		//时间转化
-		H.time('.e-time');
+		//H.time('.e-time');
 	})
 })
