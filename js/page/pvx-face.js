@@ -35,7 +35,7 @@ H.ready(['jquery','getRequest'],function(){
 		})
 
 		//脸型发布时间格式处理
-		var $time = $(".u-facetime")
+		/*var $time = $(".u-facetime")
 			$time.each(function(){
 				var ori = $(this).text(),
 					_time = new Date(ori.replace('-','/')),
@@ -46,7 +46,7 @@ H.ready(['jquery','getRequest'],function(){
 					}
 					time = arr.join('-')
 					$(this).text(time)
-			})
+			})*/
 
 
 	})

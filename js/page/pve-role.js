@@ -81,7 +81,7 @@ H.ready(['jquery','fixSidebar'],function(){
         H.curpage('.u-role')
 
         //侧边栏
-        H.fixSidebar('.pve-sidebar',96,105,100)
+        //H.fixSidebar('.pve-sidebar',96,105,100)
 
         //帮助
         H.route(85)

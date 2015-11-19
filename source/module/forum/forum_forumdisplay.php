@@ -794,6 +794,7 @@ foreach($threadlist as $thread) {
 	$thread['dblastpost'] = $thread['lastpost'];
 	$thread['lastpost'] = dgmdate($thread['lastpost'], 'u');
 	$thread['hidden'] = $_G['setting']['threadhidethreshold'] && $thread['hidden'] >= $_G['setting']['threadhidethreshold'] || in_array($thread['tid'], $thide);
+
 	if($thread['hidden']) {
 		$_G['hiddenexists']++;
 	}
@@ -829,6 +830,8 @@ foreach($threadlist as $thread) {
 		$rushtids[$thread['tid']] = $thread['tid'];
 	}
 	$threadids[$threadindex] = $thread['tid'];
+	$thread['lastedit'] = dgmdate($thread['lastedit'],'d');
+
 	$_G['forum_threadlist'][$threadindex] = $thread;
 	$threadindex++;
 

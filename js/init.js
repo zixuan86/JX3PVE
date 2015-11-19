@@ -2,20 +2,18 @@
 H.load([
 	{'jquery':head_conf.CDNROOT+'lib/jquery-1-10-2.js'},
 	{'underscore':head_conf.CDNROOT+'lib/underscore.min.js'},
-	{'responsive':head_conf.CDNROOT+'plugin/responsive.js'},
-	{'getRequest':head_conf.CDNROOT+'plugin/getRequest.js'},
-	{'macro':head_conf.CDNROOT+'plugin/Macro.js'},
-	{'fixSidebar':head_conf.CDNROOT+'plugin/fixSidebar.js'},
-	{'treeview':head_conf.CDNROOT+'plugin/jquery.treeview.js'},
 	{'cookie':head_conf.CDNROOT+'plugin/jquery.cookie.js'},
 	{'swiper':head_conf.CDNROOT+'plugin/swiper2.min.js'},
+	{'macro':head_conf.CDNROOT+'plugin/Macro.js'},
+	{'responsive':head_conf.CDNROOT+'plugin/responsive.js'},
+	{'getRequest':head_conf.CDNROOT+'plugin/getRequest.js'},
+	{'fixSidebar':head_conf.CDNROOT+'plugin/fixSidebar.js'},
+	{'header':head_conf.ROOT+'mod/header.js'},
 	{'footer':head_conf.CDNROOT+'mod/footer.js'},
 	{'dialog':head_conf.CDNROOT+'mod/dialog.js'},
 	{'postdate':head_conf.CDNROOT+'mod/postdate.js'},
-	{'oldfb':head_conf.CDNROOT+'mod/oldfb.js'},
 	{'custombg':head_conf.CDNROOT+'mod/custombg.js'},
-	{'header':head_conf.ROOT+'mod/header.js'},
-	{'bbs':head_conf.CDNROOT+'mod/bbs.js'},
+	{'editor':head_conf.CDNROOT+'mod/editor.js'},
 	{'widget':head_conf.ROOT+'mod/widget.js'}
 ])
 
@@ -71,27 +69,5 @@ H.ready('jquery',function(){
 	jQuery(function($){
 		//时间转化
 		H.time('.e-time');
-
-		//用户组判断
-		var group = $("#c-header-usergroup").text()
-		//管理员（操作工具条）
-		if(group.indexOf('管理员')!=-1 || group.indexOf('版主')!=-1 || group.indexOf('编辑')!=-1){
-			$('html').addClass('adminHTML')
-		}
-		//VIP专属
-		if(group.indexOf('VIP会员')!=-1){
-			$('html').addClass('vipHTML')
-		}
-		//LV7~LV9，管理员，VIP会员
-		var SPGROUP = ['管理员','版主','编辑','VIP会员','LV.7果子狸','LV.8果子狸','LV.9果子狸'],
-			isSP = false
-		function checkSP(){
-			for (var i=0;i<SPGROUP.length;i++){
-				isSP = isSP || group.indexOf(SPGROUP[i]) !=-1
-			}
-		}
-		checkSP()
-		if(isSP) $('html').addClass('spHTML')
-
 	})
 })
