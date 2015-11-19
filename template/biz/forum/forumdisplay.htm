@@ -10,23 +10,18 @@
 <script src="http://js.jx3pve.com/js/page/pve-fam.js"></script>
 
 <!-- jx3pve:pve -->
-<div class="listpage-container pve-container fam-container pve-listpage fam-listpage">
+<div class="listpage-container pve-container fam-container pve-listpage biz-listpage">
 
 	<!-- dz:style & js -->
 	<!--{if $_G['forum']['ismoderator']}-->
 	<script type="text/javascript" src="{$_G[setting][jspath]}forum_moderate.js?{VERHASH}"></script>
 	<!--{/if}-->
-	<style id="diy_style" type="text/css"></style>
-
 <!-- jx3pve:wrapper -->
 <div class="wp">
-
 	<!-- dz:banner-top -->
-	<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
 	<!--{ad/text/wp a_t}-->
-	<!--[diy=diy1]--><div class="drag"><div id="diy1" class="area"></div></div><!--[/diy]-->
-
 <!-- jx3pve:main -->
+
 <div class="pve-main boardnav">
 
 	<!-- jx3pve:page header -->
@@ -55,17 +50,12 @@
 			<!--{if $leftside}-->
 				<div id="sd_bdl" class="bdl" onmouseover="showMenu({'ctrlid':this.id, 'pos':'dz'});" style="width:{$_G['setting']['leftsidewidth']}px;margin-left:-{$_G['leftsidewidth_mwidth']}px">
 					<!--{hook/forumdisplay_leftside_top}-->
-					<!--[diy=diyleftsidetop]--><div id="diyleftsidetop" class="area"></div><!--[/diy]-->
-
 					<div class="tbn" id="forumleftside">
 						<!--{subtemplate forum/forumdisplay_leftside}-->
 					</div>
-
-					<!--[diy=diyleftsidebottom]--><div id="diyleftsidebottom" class="area"></div><!--[/diy]-->
 					<!--{hook/forumdisplay_leftside_bottom}-->
 				</div>
 			<!--{/if}-->
-			<div class="drag"><!--[diy=diy4]--><div id="diy4" class="area"></div><!--[/diy]--></div>
 			<!--{hook/forumdisplay_top}-->
 			<!--{if $subexists && $_G['page'] == 1}--><!--{template forum/forumdisplay_subforum}--><!--{/if}-->
 			<!--{if !empty($_G['forum']['recommendlist'])}-->
@@ -398,15 +388,13 @@
 
 			<!-- jx3pve:fast-post -->
 			<div class="pve-fastpost">
-				<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
-				<!--{if $fastpost}-->
+					<!--{if $fastpost}-->
 					<!--{template forum/forumdisplay_fastpost}-->
 				<!--{/if}-->
 			</div>
 
 			<!-- dz:list-bottom-->
 			<!--{hook/forumdisplay_bottom}-->
-			<!--[diy=diyforumdisplaybottom]--><div id="diyforumdisplaybottom" class="area"></div><!--[/diy]-->
 			<!--{if $_G['forum']['allowside']}-->
 			<div class="sd">
 				<!--{hook/forumdisplay_side_top}-->
@@ -475,9 +463,6 @@
 						</div>
 					<!--{/if}-->
 				<!--{/if}-->
-				<div class="drag">
-					<!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
-				</div>
 				<!--{hook/forumdisplay_side_bottom}-->
 			</div>
 			<!--{/if}-->
@@ -543,8 +528,7 @@
 </div><!-- main -->
 
 	<!-- dz:banner-bottom -->
-	<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
-	
+
 </div><!-- wp -->
 </div><!-- container -->
 
