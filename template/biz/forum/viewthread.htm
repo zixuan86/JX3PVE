@@ -1,16 +1,16 @@
 <!--{template common/header}-->
 
 <!-- 
- * Project: MACRO
+ * Project: FAM
  * Creat: iRuxu 2015.7.9
  * Update : iRuxu 2015.8.16
  -->
 
 <!-- jx3pve:code -->
-<script src="http://js.jx3pve.com/js/page/pve-macro.js"></script>
+<script src="http://js.jx3pve.com/js/page/pve-fam.js"></script>
 
 <!-- jx3pve:pve -->
-<div class="viewpage-container pve-container macro-container pve-viewpage macro-viewpage tgpost-folder">
+<div class="viewpage-container pve-container fam-container pve-viewpage fam-viewpage">
 
 	<!-- dz:style & js -->
 	<script type="text/javascript">var fid = parseInt('$_G[fid]'), tid = parseInt('$_G[tid]');</script>
@@ -48,10 +48,9 @@
 	<div class="pve-content">
 
 		<!-- jx3pve:primary -->
-		<!--{subtemplate forum/primary}-->
 
-		<!-- jx3pve:article -->	
-		<div class="pve-article" id="ct">
+		<!-- jx3pve:article -->		
+		<div class="pve-article " id="ct">
 
 			<!-- jx3pve:route -->
 			<!--{subtemplate jx3pve/w_route}-->
@@ -182,7 +181,6 @@
 			<!-- dz:postlist -->
 			<!--{hook/viewthread_beginline}-->
 			<div class="pve-postbox pl bm" id="postlist">
-
 				<table cellspacing="0" cellpadding="0">
 					<tr>
 						<!--{if !$close_leftinfo}-->
@@ -473,7 +471,7 @@
 			<!--{if !IS_ROBOT && $_G['setting']['threadmaxpages'] > 1}-->
 				<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, <!--{if $page > 1}-->1<!--{else}-->0<!--{/if}-->, <!--{if $page < $_G['setting']['threadmaxpages'] && $page < $_G['page_next']}-->1<!--{else}-->0<!--{/if}-->, 'forum.php?mod=viewthread&tid=$_G[tid]<!--{if $_GET[authorid]}-->&authorid=$_GET[authorid]<!--{/if}-->', $page);}</script>
 			<!--{/if}-->
-			
+
 
 		</div><!-- article -->
 

@@ -26,6 +26,14 @@ H.ready(['jquery','getRequest'],function(){
 			if(isCMD) $mark.addClass('mark-3')
 		})
 
+		//收费主题警告
+		$(".m-face-list .info .price").each(function(){
+			var price = $(this).find('em').text()
+			if(price != '-1' && price != '0' ){
+				$(this).addClass('warning')
+			}
+		})
+
 		//脸型发布时间格式处理
 		var $time = $(".u-facetime")
 			$time.each(function(){

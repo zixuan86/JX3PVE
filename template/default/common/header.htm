@@ -51,7 +51,7 @@
 	<!-- dz:mobile toggle -->
 	<!--{if empty($topic) || $topic['useheader']}-->
 		<!--{if $_G['setting']['mobile']['allowmobile'] && (!$_G['setting']['cacheindexlife'] && !$_G['setting']['cachethreadon'] || $_G['uid']) && ($_GET['diy'] != 'yes' || !$_GET['inajax']) && ($_G['mobile'] != '' && $_G['cookie']['mobile'] == '' && $_GET['mobile'] != 'no')}-->
-			<div class="xi1 bm bm_c">
+			<div class="xi1 bm bm_c none">
 			    {lang your_mobile_browser}<a href="{$_G['siteurl']}forum.php?mobile=yes">{lang go_to_mobile}</a> <span class="xg1">|</span> <a href="$_G['setting']['mobile']['nomobileurl']">{lang to_be_continue}</a>
 			</div>
 		<!--{/if}-->
@@ -60,7 +60,6 @@
 				<span><a href="javascript:;" id="shortcutcloseid" title="{lang close}">{lang close}</a></span>
 				{lang shortcut_notice}
 				<a href="javascript:;" id="shortcuttip">{lang shortcut_add}</a>
-
 			</div>
 			<script type="text/javascript">setTimeout(setShortcut, 2000);</script>
 		<!--{/if}-->

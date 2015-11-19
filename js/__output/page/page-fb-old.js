@@ -1,0 +1,1 @@
+H.ready(["jquery"],function(){jQuery(function(t){var n=t(".tab-title li");n.on("click",function(){var n=t(this),e=n.index();n.parent(".tb").find("li").removeClass("a"),n.addClass("a");var a=t(this).parent(".tb").parent(".tab-title").next(".tb-c").find(".content");a.hide().eq(e).show()})})});

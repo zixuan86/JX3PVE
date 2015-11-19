@@ -125,7 +125,14 @@ if(in_array($do, array('buy', 'exit'))) {
 					//showmessage('usergroups_span_invalid', '', array('minspan' => $group['minspan']));
 				}
 
-				if($space['extcredits'.$creditstrans] - ($amount = $days * $group['dailyprice']) < ($minbalance = 0)) {
+				//用户选择一年这打8折
+				if ($days == 360) {
+					$amount = intval(($days * $group['dailyprice']) * 0.8);
+				} else {
+					$amount = ($days * $group['dailyprice']);
+				}
+				
+				if($space['extcredits'.$creditstrans] - $amount < ($minbalance = 0)) {
 
                     makeSpacecpUserGroupAjax(0, "抱歉,米币不足");
                     //showmessage('credits_balance_insufficient', '', array('title'=> $_G['setting']['extcredits'][$creditstrans]['title'],'minbalance' => ($minbalance + $amount)));
