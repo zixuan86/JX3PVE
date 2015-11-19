@@ -357,7 +357,6 @@ function showsortmodetemplate($sortid, $fid, $sortoptionarray, $templatearray, $
 		$replaces['{subject_url}'] = $rewriteviewthread ? rewriteoutput('forum_viewthread', 1, '', $thread['tid']) : 'forum.php?mod=viewthread&amp;tid='.$thread['tid'];
 		$replaces['{lastpost_url}'] = 'forum.php?mod=redirect&tid='.$thread['tid'].'&goto=lastpost#lastpost';
 		$replaces['{lastpost_url}'] = 'forum.php?mod=redirect&tid='.$thread['tid'].'&goto=lastpost#lastpost';
-		
 		$sql = "SELECT m.groupid,g.icon FROM ".DB::table('common_member')." m ,".DB::table('common_usergroup')." g WHERE m.uid =".$thread['authorid']." and m.groupid=g.groupid LIMIT 0, 1";
 		$query = DB::query($sql);
 		$vanfon_usergroup=0;
@@ -455,7 +454,7 @@ function threadsortshow($sortid, $tid) {
 
 
 	if($sortoptionarray) {
-
+		$thread =  C::t('forum_thread')->fetch($tid);
 		foreach(C::t('forum_typeoptionvar')->fetch_all_by_tid_optionid($tid) as $option) {
 			$optiondata[$option['optionid']]['value'] = $option['value'];
 			$optiondata[$option['optionid']]['expiration'] = $option['expiration'] && $option['expiration'] <= TIMESTAMP ? 1 : 0;
@@ -554,6 +553,10 @@ function threadsortshow($sortid, $tid) {
 			$typetemplate = preg_replace($searchunit, "showoption('\\1', 'unit')", $typetemplate);
 			$typetemplate = preg_replace($searchdownloads, "showoption('\\1', 'downloads')", $typetemplate);
 			$typetemplate = preg_replace($searchprice, "showoption('\\1', 'price')", $typetemplate);
+			//get data from $thread
+			foreach($thread as $k => $v) {
+				$typetemplate = str_replace('{'.$k.'}', $v,$typetemplate);
+			}
 
 			$typetemplate =str_replace("{vanfon_uid}", $vanfon_uid, $typetemplate);
 			$typetemplate =str_replace("{vanfon_pid}", $vanfon_tid, $typetemplate);
