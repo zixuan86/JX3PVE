@@ -44,21 +44,11 @@ H.ready(['jquery','macro','fixSidebar'],function(){
 			}
 		})
 
-		//自动添加最后更新时间
-    	/*var pstatus = $(".pstatus").text(),
-	    	str_p = pstatus.search(/\u4e8e\s./),
-	    	str = pstatus.slice(str_p+1,str_p+11),
-	    	$pstatus_box = $("#u-post-lastupdate")
-
-    	$pstatus_box.text(str)*/
-    	var $lastedit = $("#u-post-lastupdate")
-    	$lastedit.text($('.c-fli-first .lastedit .e-time').text())
-
     	//导航栏激活
-		H.curpage('.u-macro')
+		  H.curpage('.u-macro')
 
     	//侧边栏
-		H.fixSidebar('.pve-sidebar',96,105,100)
+		  H.fixSidebar('.pve-sidebar',96,105,100)
     	
     	//帮助
     	H.route(53)

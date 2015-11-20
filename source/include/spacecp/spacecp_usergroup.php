@@ -26,7 +26,11 @@ if($_G['inajax'] && $_GET['showextgroups']) {
 	exit;
 }
 
-$do = in_array($_GET['do'], array('buy', 'exit', 'switch', 'list', 'forum', 'expiry')) ? trim($_GET['do']) : 'usergroup';
+//$do = in_array($_GET['do'], array('buy', 'exit', 'switch', 'list', 'forum', 'expiry')) ? trim($_GET['do']) : 'usergroup';
+//$do = in_array($_GET['do'], array('buy', 'exit', 'switch', 'list', 'forum', 'expiry')) ? trim($_GET['do']) : 'usergroup';
+//不允许用户操作退出和转换用户组
+$do = in_array($_GET['do'], array('buy', 'list', 'forum', 'expiry')) ? trim($_GET['do']) : 'usergroup';
+
 
 $extgroupids = $_G['member']['extgroupids'] ? explode("\t", $_G['member']['extgroupids']) : array();
 space_merge($space, 'count');
@@ -301,6 +305,7 @@ if(in_array($do, array('buy', 'exit'))) {
 			$groupids[] = $groupid;
 		}
 	}
+	/*
 	$expiryids = array_keys($expirylist);
 	if(!$expiryids && $_G['member']['groupexpiry']) {
 		C::t('common_member')->update($_G['uid'], array('groupexpiry' => 0));
@@ -319,6 +324,60 @@ if(in_array($do, array('buy', 'exit'))) {
 			}
 			$expirylist[$group['groupid']]['maingroup'] = $group['type'] != 'special' || $group['system'] == 'private' || $group['radminid'] > 0;
 			$expirylist[$group['groupid']]['grouptitle'] = $isexp ? '<s>'.$group['grouptitle'].'</s>' : $group['grouptitle'];
+		}
+	}*/
+	
+	//用户为VIP用户,并且过时间小于当前时间
+	if($_G['member']['groupid'] == 22 && $_G['member']['groupexpiry'] <= TIMESTAMP) {
+		$extgroupidsnew = $_G['groupid'];
+		
+		//如果用户存在拓展分组,则以拓展分组权限为准
+		if (!empty($extgroupids)) {
+			$minextgroupid = min($extgroupids);
+			$maxextgroupid = max($extgroupids);
+			
+			//系统组,组ID越小权限越大
+			if ($minextgroupid >= 1 && min($extgroupids) <= 8) {
+				$groupidnew = $minextgroupid;
+			} else {
+				$groupidnew = $maxextgroupid; 
+			}
+			
+			foreach($extgroupids as $extgroupid) {
+				if($extgroupid && $extgroupid != $groupidnew) {
+					$extgroupidsnew .= "\t".$extgroupid;
+				}
+			}
+		} else { //根据用户当期积分获取分组
+			$groupidnew = DB::result_first("SELECT groupid FROM ".DB::table('common_usergroup')." WHERE type='member' AND '".$_G['member']['credits']."'>=creditshigher AND '".$_G['member']['credits']."'<creditslower LIMIT 1");
+		}
+
+	    
+	    
+		$group = C::t('common_usergroup')->fetch($groupidnew);
+	    if($_G['adminid'] > 0 && $group['radminid'] > 0) {
+	        $newadminid = $_G['adminid'] < $group['radminid'] ? $_G['adminid'] : $group['radminid'];
+	    } elseif($_G['adminid'] > 0) {
+	        $newadminid = $_G['adminid'];
+	    } else {
+	        $newadminid = $group['radminid'];
+	    }
+	    
+		$groupexpirynew = 0;
+	    C::t('common_member')->update($_G['uid'], array('groupid' => $groupidnew, 'adminid' => $newadminid, 'groupexpiry' => $groupexpirynew, 'extgroupids' => $extgroupidsnew));
+	    
+		$_G['groupid'] = $_G['member']['groupid'] = $groupid;
+		$_G['member']['groupexpiry'] = 0;
+		 
+		$groupids = array();
+		foreach($_G['cache']['usergroups'] as $groupid => $usergroup) {
+			if ($groupid == $_G['groupid']) {
+				$_G[group][grouptitle] = $usergroup['grouptitle'];
+				$groupicon  = $usergroup['icon'];
+			}
+			if(!empty($usergroup['pubtype'])) {
+				$groupids[] = $groupid;
+			}
 		}
 	}
 

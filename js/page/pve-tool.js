@@ -1,4 +1,4 @@
-H.ready(['jquery','dialog','fixSidebar'],function(){
+H.ready(['jquery','dialog'],function(){
 	jQuery(function($){
 
 		//下载地址写入
@@ -38,8 +38,8 @@ H.ready(['jquery','dialog','fixSidebar'],function(){
 		})
 
 		//下载次数
-		var down_count = $("#postlist table:first").find('.pls').children('.hm').find('.xi1').eq(0).text()
-		$("#tool-down-count").text(down_count)
+		/*var down_count = $("#postlist table:first").find('.pls').children('.hm').find('.xi1').eq(0).text()
+		$("#tool-down-count").text(down_count)*/
 
 
 		//非必填字段为空隐藏
@@ -52,15 +52,6 @@ H.ready(['jquery','dialog','fixSidebar'],function(){
 				}
 			}
 		})
-
-		//自动添加最后更新时间
-    	/*var pstatus = $(".pstatus").text(),
-	    	str_p = pstatus.search(/\u4e8e\s./),
-	    	str = pstatus.slice(str_p+1,str_p+11),
-	    	$pstatus_box = $("#u-post-lastupdate")
-    	$pstatus_box.text(str)*/
-    	var $lastedit = $("#u-post-lastupdate")
-    	$lastedit.text($('.c-fli-first .lastedit .e-time').text())
 
     	//侧边栏关键词索引
     	$("#m-hotkey-keytg").on('click',function(){

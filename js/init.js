@@ -2,16 +2,17 @@
 H.load([
 	{'jquery':head_conf.CDNROOT+'lib/jquery-1-10-2.js'},
 	{'underscore':head_conf.CDNROOT+'lib/underscore.min.js'},
-	{'cookie':head_conf.CDNROOT+'plugin/jquery.cookie.js'},
 	{'swiper':head_conf.CDNROOT+'plugin/swiper2.min.js'},
 	{'macro':head_conf.CDNROOT+'plugin/Macro.js'},
 	{'responsive':head_conf.CDNROOT+'plugin/responsive.js'},
 	{'getRequest':head_conf.CDNROOT+'plugin/getRequest.js'},
 	{'fixSidebar':head_conf.CDNROOT+'plugin/fixSidebar.js'},
+    {'treeview':head_conf.CDNROOT+'plugin/jquery.treeview.js'},
 	{'header':head_conf.ROOT+'mod/header.js'},
 	{'footer':head_conf.CDNROOT+'mod/footer.js'},
 	{'dialog':head_conf.CDNROOT+'mod/dialog.js'},
 	{'postdate':head_conf.CDNROOT+'mod/postdate.js'},
+	{'tgpost':head_conf.CDNROOT+'mod/tgpost.js'},
 	{'custombg':head_conf.CDNROOT+'mod/custombg.js'},
 	{'editor':head_conf.CDNROOT+'mod/editor.js'},
 	{'widget':head_conf.ROOT+'mod/widget.js'}
@@ -68,6 +69,6 @@ H.ready('jquery',function(){
 
 	jQuery(function($){
 		//时间转化
-		H.time('.e-time');
+		//H.time('.e-time');
 	})
 })
