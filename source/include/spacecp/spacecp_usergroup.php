@@ -366,12 +366,12 @@ if(in_array($do, array('buy', 'exit'))) {
 		$groupexpirynew = 0;
 	    C::t('common_member')->update($_G['uid'], array('groupid' => $groupidnew, 'adminid' => $newadminid, 'groupexpiry' => $groupexpirynew, 'extgroupids' => $extgroupidsnew));
 	    
-		$_G['groupid'] = $_G['member']['groupid'] = $groupid;
+		$_G['groupid'] = $_G['member']['groupid'] = $groupidnew;
 		$_G['member']['groupexpiry'] = 0;
 		 
 		$groupids = array();
 		foreach($_G['cache']['usergroups'] as $groupid => $usergroup) {
-			if ($groupid == $_G['groupid']) {
+			if ($groupid == $groupidnew) {
 				$_G[group][grouptitle] = $usergroup['grouptitle'];
 				$groupicon  = $usergroup['icon'];
 			}
