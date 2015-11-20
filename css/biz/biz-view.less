@@ -1,76 +1,71 @@
-
-.biz-detail {
-  .clearfix;
-  .p(o, 50px 0px 20px 0px);
-  .w(90%);
-  margin: 0 auto;
-  .biz-detail-pic {
-    .fl;
-    .size(220px, 140px);
-    .bo(o, 1px solid #ddd);
-    .p(o, 30px);
-    img {
-      .full;
-    }
-  }
-  .biz-detail-all {
-    .p(l, 300px);
-    ul {
-      li {
-        .fz(12px, 32px);
-        .size(100%, 32px);
-        .bo(r, 3px solid #ddd);
-        .bgc(#f1f1f1);
-        .r(3px);
-        .m(b, 10px);
-        label {
-          .color(#666);
-          .p(o, 0px 10px 0px 20px);
-          cursor: default;
-        }
-        span {
-          .color(#049abf);
-        }
-      }
-    }
-  }
-}
-
-
-.biz-primary {
-  h2 {
-    font-size: 12px;
-    .pa;
-    background-color: @basecolor;
-    .z(2);
-    line-height: 22px;
-    margin-left: 20px;
-    padding: 0 5px;
-    color: #fff;
-    letter-spacing: 1px;
-    border-radius: 3px;
-  }
+/*列表*/
+.biz-trading-list {
   ul {
-    border: 1px solid #ddd;
-    padding-top: 14px;
-    position: relative;
-    top: 16px;
-    margin-bottom: 30px;
+    .clearfix;
     li {
-      line-height: 24px;
-      padding: 2px 8px;
-      border-bottom: 1px dotted #ddd;
-      span {
-        width: 80px;
-        .dbi;
-        color: #777;
+      .pr;
+      .fl;
+      .clearfix;
+      .clip;
+      .w(380px);
+      .m(r, 38px);
+      .p(o, 10px 20px 20px 20px);
+      .box-a {
+        .db;
+        .pa;
+        .full;
+        .lt(0, 0);
       }
-      &.u-last {
-        border-bottom: none;
+      .box-a:hover {
+        -webkit-box-shadow: inset 0 0 100px #ddd;
+        -moz-box-shadow: inset 0 0 100px #ddd;
+        box-shadow: inset 0 0 100px #ddd;
+        .r(6px);
       }
-      a {
-        .color(@bluex, #c00);
+      h3 {
+        .nobreak;
+        .fzlh(14px, 32px, 32px);
+        .color(#222);
+        .p(b, 10px);
+        label {
+          .color(#9900ff);
+        }
+      }
+      .c-authentication {
+        .db;
+        .fl;
+        .pr;
+        .p(o, 10px);
+        .m(r, 10px);
+        .bo(o, 1px solid #ddd);
+        .size(200px, 120px);
+        img {
+          .size(200px, 120px);
+        }
+        .bg {
+          .db;
+          .size(200px, 120px);
+          background: url("http://img.jx3pve.com/img/header/jx3pve-logo-white.png") center #ddd no-repeat;
+        }
+      }
+      .info {
+        .fr;
+        .m(t, 12px);
+        .size(148px, 100%);
+        span {
+          .db;
+          .clip;
+          .w(100%);
+          .lh(24px);
+          .color(#444);
+        }
+        .span-zt label {
+          .color(#f00);
+        }
       }
     }
   }
 }
+
+
+
