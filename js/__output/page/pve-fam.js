@@ -1,1 +1,1 @@
-H.ready(["jquery","fixSidebar","treeview"],function(){jQuery(function(){H.curpage(".u-fam"),H.fixSidebar(".pve-sidebar",96,105,100),H.route(55)})});
+H.ready(["jquery"],function(){jQuery(function(){H.curpage(".u-fam"),H.route(55)})});

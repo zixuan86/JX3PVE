@@ -28,21 +28,24 @@
 				<!-- 当满足时，给i添加true，不满足时，添加false样式名 -->
 				<!-- 以下数字表示满足的groupid，其余组不满足 -->
 
-			<!-- 22,24,25,26,33,34,36 -->
+				<!-- 22 / 24,25,26,33,34 -->
+				<li>用户名高亮：<i <!--{if ( $_G['member']['groupid'] == 22 || $_G['member']['groupid'] == 24 || $_G['member']['groupid'] == 25 || $_G['member']['groupid'] == 26 || $_G['member']['groupid'] == 33 || $_G['member']['groupid'] == 34 ) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
 				
-				<li>用户名高亮：<i <!--{if ($_G['member']['groupid'] == 22 || $_G['member']['groupid'] == 24 || $_G['member']['groupid'] == 25 || $_G['member']['groupid'] == 26 || $_G['member']['groupid'] == 33 || $_G['member']['groupid'] == 34 ||$_G['member']['groupid'] == 36) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
+				<!-- 22 / 26 / 1,2,3,33,34 -->
+				<li>免回复隐藏：<i <!--{if ($_G['member']['groupid'] == 22 || $_G['member']['groupid'] == 26 || $_G['member']['groupid'] == 1 || $_G['member']['groupid'] == 2 || $_G['member']['groupid'] == 3 || $_G['member']['groupid'] == 33 ||$_G['member']['groupid'] == 34) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
 				
-				<!-- 22,26,1,2,3,17,34,33,36 -->
-				<li>免回复隐藏：<i <!--{if ($_G['member']['groupid'] == 22 || $_G['member']['groupid'] == 26 || $_G['member']['groupid'] == 1 || $_G['member']['groupid'] == 2 || $_G['member']['groupid'] == 3 || $_G['member']['groupid'] == 17 ||$_G['member']['groupid'] == 36 ||$_G['member']['groupid'] == 33 ||$_G['member']['groupid'] == 34) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
-				
-				<!-- 22,1,2,17 -->
-				<li>免付费主题：<i <!--{if ($_G['member']['groupid'] == 22 || $_G['member']['groupid'] == 1 || $_G['member']['groupid'] == 12 || $_G['member']['groupid'] == 17) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
-				<!-- 22,1,2,17 -->
-				<li>免付费下载：<i <!--{if ($_G['member']['groupid'] == 22 || $_G['member']['groupid'] == 1 || $_G['member']['groupid'] == 12 || $_G['member']['groupid'] == 17) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
+				<!-- 22 / 1,2 -->
+				<li>免付费主题：<i <!--{if ($_G['member']['groupid'] == 22 || $_G['member']['groupid'] == 1 || $_G['member']['groupid'] == 2) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
+
+				<!-- 22 / 1,2 -->
+				<li>免付费下载：<i <!--{if ($_G['member']['groupid'] == 22 || $_G['member']['groupid'] == 1 || $_G['member']['groupid'] == 2) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
+
 				<!-- 22 -->
 				<li>泛广告屏蔽：<i <!--{if ($_G['member']['groupid'] == 22) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
+
 				<!-- 22 -->
 				<li>栏目特权：<i <!--{if ($_G['member']['groupid'] == 22) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
+				
 				<!-- 22 -->
 				<li>道具折扣：<i <!--{if ($_G['member']['groupid'] == 22) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
 				
