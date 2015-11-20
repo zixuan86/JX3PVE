@@ -331,7 +331,16 @@ if(in_array($do, array('buy', 'exit'))) {
 	if($_G['member']['groupid'] == 22 && $_G['member']['groupexpiry'] <= TIMESTAMP) {
 		$extgroupidsnew = $_G['groupid'];
 		
-		//如果用户存在拓展分组,则以拓展分组权限为准
+		//如果拓展用户存在,则过滤VIP组
+		if ($extgroupids) {
+			foreach ($extgroupids as $extkey => $extvalue) {
+				if ($extvalue == 22) {
+					unset($extgroupids[$extkey]);
+				}
+			}
+		}
+		
+		//如果用户存在拓展分组并且拓展分组不为VIP,则以拓展分组权限为准
 		if (!empty($extgroupids)) {
 			$minextgroupid = min($extgroupids);
 			$maxextgroupid = max($extgroupids);
