@@ -11,38 +11,29 @@
 error_reporting(0);
 
 _get_script_url();
-define('UC_API', strtolower(($_SERVER['HTTPS'] == 'on' ? 'https' : 'http').'://'.'static.jx3pve.com'.substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/'))));
+define('UC_API', strtolower(($_SERVER['HTTPS'] == 'on' ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/'))));
 
 $uid = isset($_GET['uid']) ? $_GET['uid'] : 0;
 $size = isset($_GET['size']) ? $_GET['size'] : '';
 $random = isset($_GET['random']) ? $_GET['random'] : '';
 $type = isset($_GET['type']) ? $_GET['type'] : '';
 $check = isset($_GET['check_file_exists']) ? $_GET['check_file_exists'] : '';
+$avatar = get_avatar($uid, $size, $type);
 
-$avatar = './data/avatar/'.get_avatar($uid, $size, $type);
-if(file_exists(dirname(__FILE__).'/'.$avatar)) {
-	if($check) {
-		echo 1;
-		exit;
-	}
-	$random = !empty($random) ? rand(1000, 9999) : '';
-	$avatar_url = empty($random) ? $avatar : $avatar.'?random='.$random;
+$status = get_avatar_status($avatar);
+if($check){
+	return $status;
 } else {
-	if($check) {
-		echo 0;
-		exit;
+	if($status){
+		$avatar_url = 'http://oss.jx3pve.com/avatar/' . $avatar;
+	} else {
+		// 没有头像
+		$size = in_array($size, array('big', 'middle', 'small')) ? $size : 'middle';
+		$avatar_url = 'images/noavatar_'.$size.'.gif';
 	}
-	$size = in_array($size, array('big', 'middle', 'small')) ? $size : 'middle';
-	$avatar_url = 'images/noavatar_'.$size.'.gif';
 }
 
-if(empty($random)) {
-	header("HTTP/1.1 301 Moved Permanently");
-	header("Last-Modified:".date('r'));
-	header("Expires: ".date('r', time() + 86400));
-}
-
-header('Location: '.UC_API.'/'.$avatar_url);
+header("Location: $avatar_url");
 exit;
 
 function get_avatar($uid, $size = 'middle', $type = '') {
@@ -54,6 +45,36 @@ function get_avatar($uid, $size = 'middle', $type = '') {
 	$dir3 = substr($uid, 5, 2);
 	$typeadd = $type == 'real' ? '_real' : '';
 	return $dir1.'/'.$dir2.'/'.$dir3.'/'.substr($uid, -2).$typeadd."_avatar_$size.jpg";
+}
+
+function get_avatar_status($path){
+	$host       = $_G['config']['extend']['storage']['aliyun']['attachurl'];
+	$access_id  = $_G['config']['extend']['storage']['aliyun']['access_id'];
+	$access_key = $_G['config']['extend']['storage']['aliyun']['access_key'];
+	$bucket     = $_G['config']['extend']['storage']['aliyun']['bucket'];
+	$timeout    = 2;
+	$date       = gmdate('D, d M Y H:i:s \G\M\T');
+	// Authorization
+	$uri = '/' . $bucket . '/avatar/' . $path;
+	$sign_string = "HEAD\n\n\n" . $date . "\n" . $uri;
+	$sign = base64_encode(hash_hmac('sha1', $sign_string, $access_key, true));
+	$head = array(
+		"Date: {$date}",
+		"Authorization: OSS {$access_id}:{$sign}",
+	);
+	$ch  = curl_init($host . $uri);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "HEAD");
+	curl_setopt($ch, CURLOPT_NOBODY, 1);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $head);
+	curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+	curl_setopt($ch, CURLOPT_HEADER, 1);
+	$response = curl_exec($ch);
+	$status   = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	if ($status == 200) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 function _get_script_url() {

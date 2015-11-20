@@ -381,12 +381,23 @@ class usercontrol extends base {
 		$biginfo = @getimagesize($bigavatarfile);
 		$middleinfo = @getimagesize($middleavatarfile);
 		$smallinfo = @getimagesize($smallavatarfile);
+		
 		if(!$biginfo || !$middleinfo || !$smallinfo || $biginfo[2] == 4 || $middleinfo[2] == 4 || $smallinfo[2] == 4
 			|| $biginfo[0] > 200 || $biginfo[1] > 250 || $middleinfo[0] > 120 || $middleinfo[1] > 120 || $smallinfo[0] > 48 || $smallinfo[1] > 48) {
 			file_exists($bigavatarfile) && unlink($bigavatarfile);
 			file_exists($middleavatarfile) && unlink($middleavatarfile);
 			file_exists($smallavatarfile) && unlink($smallavatarfile);
 			$success = 0;
+		} else {
+			if($bigavatarfile && $biginfo){
+				$this->upload_oss($bigavatarfile, $biginfo, $this->get_avatar($uid, 'big', $avatartype));
+			}
+			if($middleavatarfile && $middleinfo){
+				$this->upload_oss($middleavatarfile, $middleinfo, $this->get_avatar($uid, 'middle', $avatartype));
+			}
+			if($smallavatarfile && $smallinfo){
+				$this->upload_oss($smallavatarfile, $smallinfo, $this->get_avatar($uid, 'small', $avatartype));
+			}
 		}
 
 		$filetype = '.jpg';
@@ -399,6 +410,47 @@ class usercontrol extends base {
 		}
 	}
 
+	function upload_oss($localpath, $info, $path){
+		// 内网和外网自行修改 推荐内网
+		$host       = $_G['config']['extend']['storage']['aliyun']['attachurl'];
+		$access_id  = $_G['config']['extend']['storage']['aliyun']['access_id'];
+		$access_key = $_G['config']['extend']['storage']['aliyun']['access_key'];
+		$bucket     = $_G['config']['extend']['storage']['aliyun']['bucket'];
+		$timeout    = 30;
+		$mime       = $info['mime'];
+		$date       = gmdate('D, d M Y H:i:s \G\M\T');
+		$length     = filesize($localpath);
+		// Authorization
+		$uri = '/' . $bucket . '/avatar/' . $path;
+		$sign_string = "PUT\n\n" . $mime . "\n" . $date . "\n" . $uri;
+		$sign = base64_encode(hash_hmac('sha1', $sign_string, $access_key, true));
+		$head = array(
+			"Content-Type: {$mime}",
+			"Date: {$date}",
+			"Content-Length: {$length}",
+			"Authorization: OSS {$access_id}:{$sign}",
+		);
+		$resource = fopen($localpath, 'r');
+		$ch  = curl_init($host . $uri);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_INFILE, $resource);
+		curl_setopt($ch, CURLOPT_INFILESIZE, $length);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $head);
+		curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+		curl_setopt($ch, CURLOPT_HEADER, 1);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
+		$response = curl_exec($ch);
+		$status   = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		fclose($resource);
+		if ($status == 200) {
+			return true;
+		} else {
+			return $response;
+		}
+	}
+	
 
 	function flashdata_decode($s) {
 		$r = '';
