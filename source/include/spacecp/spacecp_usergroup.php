@@ -337,7 +337,7 @@ if(in_array($do, array('buy', 'exit'))) {
 			$maxextgroupid = max($extgroupids);
 			
 			//系统组,组ID越小权限越大
-			if ($minextgroupid >= 1 && min($extgroupids) <= 8) {
+			if ($minextgroupid >= 1 && $minextgroupid <= 8) {
 				$groupidnew = $minextgroupid;
 			} else {
 				$groupidnew = $maxextgroupid; 
