@@ -1,7 +1,5 @@
 <!--{if $quicksearchlist && !$_GET['archiveid']}-->
 	
-	<a href="javascript:void(0)" class="s-filter-tg" id="s-filter-tg">点击下方条件展开筛选</a>
-
 	<div class="s-filter" id="s-filter">
 
 		<script type="text/javascript">
@@ -16,7 +14,8 @@
 		    	<div class="item">
 					<span class="label">$option[title]</span>
 		            <div class="value">
-		                <ul class="cl">
+		            	<span class="default"><em>不限</em><i></i></span>
+		                <ul class="extend cl {if $option[identifier]=='fuwuqi'}u-fwq-1{/if}">
 		                    <li{if $_GET[''.$option[identifier]] == 'all'} class="a"{/if}><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_GET['sortid']&searchsort=1$filterurladd&$option[identifier]=all$sorturladdarray[$option[identifier]]" class="xi2">{lang unlimited}</a></li>
 							<!--{if $option[type] == 'select'}-->
 								<!--{loop $option['choices'] $id $value}-->
@@ -32,11 +31,13 @@
 									<!--{if ksort($showoption)}--><!--{/if}-->
 									<!--{loop $showoption $optioncount $values}-->
 										<!--{if $tmpcount != $optioncount && ($tmpcount = $optioncount)}-->
-										</ul><ul class="subtsm cl">
+										</ul>
+										<ul class="extend subtsm cl">
 											<!--{loop $values $id $value}-->
 												<li{if preg_match('/^'.$value[optionid].'\./i', $_GET[''.$option[identifier]]) || preg_match('/^'.$value[optionid].'$/i', $_GET[''.$option[identifier]])} class="a"{/if}><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_GET[sortid]&searchsort=1&$option[identifier]=$id$sorturladdarray[$option[identifier]]" class="xi2">$value[content]</a></li>
 											<!--{/loop}-->
-										</ul><ul>
+										</ul>
+										<ul>
 										<!--{/if}-->
 									<!--{/loop}-->
 								<!--{/if}-->
@@ -54,14 +55,12 @@
 		<!--{/loop}-->
 
 		<!--{if $fontsearch_html}-->
-			<div class="w-filter-box">
-			    <div class="w-filter-font">
-				    <div id="fontsearch">
-				    	<div class="til">筛选<span>FILTER</span></div>
-				        $fontsearch_html
-				    </div>
+		    <div class="s-filter-box s-filter-font">
+		    	<div class="s-filter-til">筛选<span>FILTER</span></div>
+			    <div class="s-filter-list" id="fontsearch">
+			        $fontsearch_html
 			    </div>
-			</div>
+		    </div>
 		<!--{/if}-->
 
 	</div>

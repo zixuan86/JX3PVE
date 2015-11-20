@@ -1,7 +1,5 @@
 <!--{if $quicksearchlist && !$_GET['archiveid']}-->
 	
-	<a href="javascript:void(0)" class="s-filter-tg" id="s-filter-tg">点击下方条件展开筛选</a>
-
 	<div class="s-filter" id="s-filter">
 
 		<script type="text/javascript">
@@ -63,8 +61,8 @@
 		<!--{/loop}-->
 
 		<!--{if $formsearch_html}-->
-			<div class="w-filter-box">
-				<div class="w-filter-form">
+			<div class="s-filter-box">
+				<div class="s-filter-form">
 				    <form method="post" autocomplete="off" name="searhsort" id="searhsort" action="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_GET[sortid]">
 				        <input type="hidden" name="formhash" value="{FORMHASH}" />
 				        $formsearch_html

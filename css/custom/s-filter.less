@@ -1,0 +1,110 @@
+//module box
+.s-filter{
+    
+}
+
+//module wrapper
+.s-filter-box{
+
+}
+
+//module type - wrapper
+.s-filter-font{
+
+}
+
+//module title
+.s-filter-til{
+    .fz(15px,2);
+    border-bottom:1px solid #ddd;
+    span{
+        .fr;color:#999;
+        .italic;
+        .fz(13px);
+    }
+}
+
+//module list box
+.s-filter-list{
+    padding:10px 0;
+    .fz(13px,2);
+    .item{
+        margin-bottom:10px;
+        .clearfix;
+    }
+    .label{
+        .fl;margin-right:15px;
+    }
+    .value{
+        .fl;
+        .db;.u-btn-gray(a);
+        border-radius:3px;
+        .h(26px);.x;
+        .clip;padding:0;
+        min-width:120px;
+        user-select:none;
+        transition:0.1s ease-in-out;
+        
+        &:hover{
+            box-shadow: 0 0 5px #ccc;
+        }
+
+        .default{
+            .db;.pr;
+            .color(#555,@bluex);
+            .fzlh(13px,26px);
+            em{.db;}
+            i{.db;.pa;.rt(3px,0);.size(24px,26px);background:url('@{url}tool/keytg.png') no-repeat 0 0;}
+        }
+
+        .extend{
+            .u-btn-gray(a);
+            padding:0;
+            box-shadow: 2px 2px 10px #ccc;
+            //margin-top:26px;
+            li{
+                margin:0 8px;
+                border-bottom:1px solid #ddd;
+                padding:2px 0;
+            }
+            a{
+                .color(#555,#c00);
+            }
+            .a a{
+                .color(#555,#c00);
+            }
+        }
+
+        &.active{
+            overflow: visible;
+            position: relative;
+            z-index: 10;
+        }
+    }
+}
+
+//服务器列表模式一
+.u-fwq-1{
+    .w(800px);
+    padding:20px;
+    li{
+        .fl;
+        margin:5px 0;
+        .fz(13px,2);
+        .w(25%);
+        .x(left);
+        a{
+            .db;
+            padding:0 10px;
+            margin:0 10px;
+            transition: 0.1s ease-in-out;
+            &:hover{
+                color: #fff;
+                background-color: #0084ff;
+                border-radius: 4px;
+                text-shadow: none;
+                box-shadow: 0 0 1px #08559C inset;
+            }
+        }
+    }
+}

@@ -15,7 +15,8 @@ H.load([
 	{'tgpost':head_conf.CDNROOT+'mod/tgpost.js'},
 	{'custombg':head_conf.CDNROOT+'mod/custombg.js'},
 	{'editor':head_conf.CDNROOT+'mod/editor.js'},
-	{'widget':head_conf.ROOT+'mod/widget.js'}
+	{'widget':head_conf.ROOT+'mod/widget.js'},
+	{'sfilter':head_conf.ROOT+'mod/sfilter.js'}
 ])
 
 //全局设置
