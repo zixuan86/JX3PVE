@@ -6,6 +6,7 @@ H.ready(['jquery'], function(){
 
     	//点击展开选择
     	$value.on('click',function(){
+            $value.not($(this)).removeClass('active')
     		$(this).toggleClass('active')
     	})
     	//点击任意选择后收起
@@ -22,7 +23,11 @@ H.ready(['jquery'], function(){
     		if(current_key){
     			//当item为服务器筛选时，字符串做截取
     			if($(this).find('.extend').hasClass('u-fwq-1')){
-    				current_key = $.trim(current_key.split('/')[1])
+                    if(current_key == '不限'){
+                        current_key == '不限'
+                    }else{
+                        current_key = $.trim(current_key.split('/')[1])
+                    }
     			}
     			//将当前值赋值给默认值
     			default_key = current_key
