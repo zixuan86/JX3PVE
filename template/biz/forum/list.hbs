@@ -23,17 +23,17 @@
 
 <div class="m-biz-list">
     <ul>
-        <li class="thead">
+        <li class="thead"><a>
             <span class="biz-status">出售状态</span>
             <span class="biz-fwq">服务器</span>
             <span class="biz-title">标题</span>
             <span class="biz-dateline">发布时间</span>
-        </li>
+        </a></li>
         [loop]
         <li class="tbody"><a href="{subject_url}" target="_blank">
             <span class="biz-status">{biz_status_value}</span>
-            <span class="biz-fwq"><em>@</em> {fuwuqi_value}</span>
-            <span class="biz-title">{subject}</span>
+            <span class="biz-fwq"><em>@</em>{fuwuqi_value}</span>
+            <span class="biz-title"><i class="biz-type"><b>{biz_type_value}</b></i>{subject}</span>
             <span class="biz-dateline">{dateline}</span>
         </a></li>
         [/loop]
