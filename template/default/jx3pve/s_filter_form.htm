@@ -13,47 +13,54 @@
 		    	<!--{block formsearch}-->
 		            <div class="item">
 		                <span class="label">$option[title]</span>
-		                <!--{if in_array($option['type'], array('radio', 'checkbox', 'select', 'range'))}-->
-		                    <span class="value" id="select_$option[identifier]">
-		                    <!--{if $option[type] == 'select'}-->
-		                        <!--{if $_GET[searchoption][$optionid][value]}-->
-		                            <script type="text/javascript">
-		                                changeselectthreadsort('$_GET[searchoption][$optionid][value]', $optionid, 'search');
-		                            </script>
-		                        <!--{else}-->
-		                            <select name="searchoption[$optionid][value]" id="$option[identifier]" onchange="changeselectthreadsort(this.value, '$optionid', 'search');" class="select ps vm">
-		                                <option value="0">{lang please_select}</option>
-		                            <!--{loop $option['choices'] $id $value}-->
-		                                <!--{if !$value[foptionid]}-->
-		                                <option value="$id">$value[content] <!--{if $value['level'] != 1}-->&raquo;<!--{/if}--></option>
-		                                <!--{/if}-->
-		                            <!--{/loop}-->
-		                            </select>
-									<input type="hidden" name="searchoption[$optionid][type]" value="$option[type]">
-		                        <!--{/if}-->
-		                    <!--{elseif $option[type] != 'checkbox'}-->
-		                        <select name="searchoption[$optionid][value]" id="$option[identifier]" class="select ps vm">
-		                            <option value="0">{lang please_select}</option>
-		                        <!--{loop $option['choices'] $id $value}-->
-		                            <option value="$id" {if $_GET[searchoption][$optionid][value] == $id}selected="selected"{/if}>$value</option>
-		                        <!--{/loop}-->
-		                        </select>
-		                        <input type="hidden" name="searchoption[$optionid][type]" value="$option[type]">
-		                    <!--{else}-->
-		                        <!--{loop $option['choices'] $id $value}-->
-		                            <label class="checkbox"><input type="checkbox" class="pc" name="searchoption[$optionid][value][$id]" value="$id" {if is_array($_GET[searchoption][$optionid]) && $_GET[searchoption][$optionid][value][$id]}checked="checked"{/if}><span>$value</span></label>
-		                        <!--{/loop}-->
-		                        <input type="hidden" name="searchoption[$optionid][type]" value="checkbox">
-		                    <!--{/if}-->
-		                    </span>
-		                <!--{else}-->
-		                    <!--{if $option['type'] == 'calendar'}-->
-		                        <script type="text/javascript" src="{$_G[setting][jspath]}calendar.js?{VERHASH}"></script>
-		                        <input type="text" name="searchoption[$optionid][value]" size="15" class="px vm" value="{if is_array($_GET[searchoption][$optionid])}$_GET[searchoption][$optionid][value]{/if}" onclick="showcalendar(event, this, false)" />
-		                    <!--{else}-->
-		                        <input type="text" name="searchoption[$optionid][value]" size="15" class="px vm" value="{if is_array($_GET[searchoption][$optionid])}$_GET[searchoption][$optionid][value]{/if}" />
-		                    <!--{/if}-->
-		                <!--{/if}-->
+		                <div class="value">
+		                	<!--select & radio & checkbox-->
+			                <!--{if in_array($option['type'], array('radio', 'checkbox', 'select', 'range'))}-->
+			                    <span class="choose" id="select_$option[identifier]">
+			                    <!--select-->
+			                    <!--{if $option[type] == 'select'}-->
+			                        <!--{if $_GET[searchoption][$optionid][value]}-->
+			                            <script type="text/javascript">
+			                                changeselectthreadsort('$_GET[searchoption][$optionid][value]', $optionid, 'search');
+			                            </script>
+			                        <!--{else}-->
+			                            <select name="searchoption[$optionid][value]" id="$option[identifier]" onchange="changeselectthreadsort(this.value, '$optionid', 'search');" class="select ps vm">
+			                                <option value="0">{lang please_select}</option>
+			                            <!--{loop $option['choices'] $id $value}-->
+			                                <!--{if !$value[foptionid]}-->
+			                                <option value="$id">$value[content] <!--{if $value['level'] != 1}-->&raquo;<!--{/if}--></option>
+			                                <!--{/if}-->
+			                            <!--{/loop}-->
+			                            </select>
+										<input type="hidden" name="searchoption[$optionid][type]" value="$option[type]">
+			                        <!--{/if}-->
+			                    <!--radio-->
+			                    <!--{elseif $option[type] != 'checkbox'}-->
+			                        <select name="searchoption[$optionid][value]" id="$option[identifier]" class="select ps vm">
+			                            <option value="0">{lang please_select}</option>
+			                        <!--{loop $option['choices'] $id $value}-->
+			                            <option value="$id" {if $_GET[searchoption][$optionid][value] == $id}selected="selected"{/if}>$value</option>
+			                        <!--{/loop}-->
+			                        </select>
+			                        <input type="hidden" name="searchoption[$optionid][type]" value="$option[type]">
+			                    <!--checkbox-->
+			                    <!--{else}-->
+			                        <!--{loop $option['choices'] $id $value}-->
+			                            <label class="checkbox"><input type="checkbox" class="pc" name="searchoption[$optionid][value][$id]" value="$id" {if is_array($_GET[searchoption][$optionid]) && $_GET[searchoption][$optionid][value][$id]}checked="checked"{/if}><span>$value</span></label>
+			                        <!--{/loop}-->
+			                        <input type="hidden" name="searchoption[$optionid][type]" value="checkbox">
+			                    <!--{/if}-->
+			                    </span>
+			                <!--{else}-->
+			                <!--calendar-->
+			                    <!--{if $option['type'] == 'calendar'}-->
+			                        <script type="text/javascript" src="{$_G[setting][jspath]}calendar.js?{VERHASH}"></script>
+			                        <input type="text" name="searchoption[$optionid][value]" size="15" class="px vm" value="{if is_array($_GET[searchoption][$optionid])}$_GET[searchoption][$optionid][value]{/if}" onclick="showcalendar(event, this, false)" />
+			                    <!--{else}-->
+			                        <input type="text" name="searchoption[$optionid][value]" size="15" class="px vm" value="{if is_array($_GET[searchoption][$optionid])}$_GET[searchoption][$optionid][value]{/if}" />
+			                    <!--{/if}-->
+			                <!--{/if}-->
+		                </div>
 		            </div>
 		            <!--{/block}-->
 			<!--{/if}-->
@@ -61,14 +68,14 @@
 		<!--{/loop}-->
 
 		<!--{if $formsearch_html}-->
-			<div class="s-filter-box">
-				<div class="s-filter-form">
-				    <form method="post" autocomplete="off" name="searhsort" id="searhsort" action="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_GET[sortid]">
-				        <input type="hidden" name="formhash" value="{FORMHASH}" />
-				        $formsearch_html
-				        <button type="submit" class="u-button-search" name="searchsortsubmit">{lang search}</button>
-				    </form>
-			    </div>
+			<div class="s-filter-box s-filter-form">
+			    <form method="post" autocomplete="off" name="searhsort" id="searhsort" action="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_GET[sortid]">
+			        <input type="hidden" name="formhash" value="{FORMHASH}" />
+			        <div class="s-filter-list">
+			        	$formsearch_html
+			    	</div>
+			        <button type="submit" class="u-button-search" name="searchsortsubmit">{lang search}</button>
+			    </form>
 			</div>
 		<!--{/if}-->
 
