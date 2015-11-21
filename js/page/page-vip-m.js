@@ -8,10 +8,9 @@ jQuery(function($) {
     var $nologin = $("#vip-m-nologin")
 
     var uid = parseInt($("#uid").text())
-    var buyVipFail = $("#buyVipFail")
-    var buyVipSuccess = $("#buyVipSuccess")
-    var buyVipOtherFail = $("#buyVipOtherFail")
-    var buyPrimary  = $("#vip-m-buy")
+    var $buyVipSuccess = $("#buyVipSuccess")
+    var $buyVipOtherFail = $("#buyVipOtherFail")
+    var $buyPrimary  = $("#vip-m-buy")
 
     
     //判断登录
@@ -77,15 +76,13 @@ jQuery(function($) {
         $showVIPDateSpan.html("<em>有效期至:</em><b id='ex'>"+toDate+"</b>")
       }
     };
-    
+  
     //提交表单
     var $submitForm = $("form#buygroupform");
     $btn.click(function(){
-        buyVipOtherFail.hide();
-        
+        $buyVipOtherFail.hide();
         //判断米币不足
     　  if(!judgeCoinsEnough()){return;}
-
         //提交表单
         var url = "home.php?mod=spacecp&ac=usergroup&do=buy&groupid=22&inajax=1";
         var data = {
@@ -99,13 +96,14 @@ jQuery(function($) {
         $.post(url, data, function(result){
           result = result ? JSON.parse(result) : {};
           if(result.code === 1){
-            buyPrimary.slideUp(600);
-            buyVipSuccess.slideDown(600);
+            $buyPrimary.slideUp(600);
+            $buyVipSuccess.slideDown(600);
             //更新显示时间
             updateVIPDateB($buyDays.val());
           }else{
-            buyPrimary.slideUp(600)
-            buyVipFail.slideDown(600)
+            $buyPrimary.slideUp(600);
+            $("#errorCode").html(result.code + " : " +result.msg);
+            $buyVipOtherFail.slideDown();
           }
         });
     });
