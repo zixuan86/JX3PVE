@@ -1,0 +1,41 @@
+<div class="biz-trading-list">
+    <ul>
+        [loop]
+        <li>
+            <h3><label>【{typename}】</label>{subject}</h3>
+            <span class="c-authentication">
+                    <span class="bg"><img src="{itempic_value}" alt=""></span>
+                    <i class="verif"><span>{author_verify}</span></i></span>
+
+            <div class="info">
+                <span class="span-zt">状态：<label>{salestatus_value}</label></span>
+                <span class="span-fwq">服务器：<label>{fuwuqi_value}</label></span>
+                <span class="span-man">发布人：<label>{author}</label></span>
+                <span class="span-time">发布时间：<label>{dateline}</label></span>
+                <span class="span-view">人气度：<label>{views}</label> </span>
+            </div>
+            <a class="box-a" href="{subject_url}" target="_blank"></a>
+        </li>
+        [/loop]
+    </ul>
+</div>
+
+
+<div class="m-biz-list">
+    <ul>
+        <li class="thead">
+            <span class="biz-status">出售状态</span>
+            <span class="biz-fwq">服务器</span>
+            <span class="biz-title">标题</span>
+            <span class="biz-dateline">发布时间</span>
+        </li>
+        [loop]
+        <li class="tbody"><a href="{subject_url}" target="_blank">
+            <span class="biz-status">{biz_status_value}</span>
+            <span class="biz-fwq"><em>@</em> {fuwuqi_value}</span>
+            <span class="biz-title">{subject}</span>
+            <span class="biz-dateline">{dateline}</span>
+        </a></li>
+        [/loop]
+    </ul>
+</div>

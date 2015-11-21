@@ -1,0 +1,135 @@
+.m-biz-tradetype {
+    .p(o, 20px 0px 10px 0px);
+    ul {
+      width: 101%;
+      .clearfix;
+      li {
+        .fl;
+        .size(100px, 30px);
+        .m(b, 10px);
+        a {
+          .db;
+          .x;
+          .pointer;
+          .size(80px, 30px);
+          .m(x, 10px);
+          .color(#fff);
+          .lh(30px);
+          text-shadow: 1px 1px 1px #333;
+          background: url('@{url}biz/btn.png') no-repeat;
+          &:hover {
+            background: url('@{url}biz/btn.png') 0px -30px no-repeat;
+          }
+        }
+      }
+    }
+  }
+
+  .m-biz-zt, .m-biz-ztsd {
+    a {
+      transition: 0.2s ease-in-out;
+    }
+    a:hover {
+      -webkit-filter: brightness(120%);
+    }
+  }
+  .m-biz-ztsd {
+    a {
+      .db;
+      .size(200px, 80px);
+      //  background: url('@{url}biz/zt.png') no-repeat 0 0;
+    }
+  }
+
+  .m-biz-search {
+    .item {
+      margin-bottom: 4px;
+      .px {
+        border: 1px solid #ddd;
+        background-color: #fff !important;
+        border-radius: 4px;
+        box-shadow: 0 0 4px #ddd inset;
+      }
+    }
+    .u-button-search {
+      .fr;
+      .u-btn-gray(c);
+      border: 1px solid #ccc;
+      color: #555;
+      padding: 3px 15px;
+      border-radius: 3px;
+    }
+  }
+
+
+.m-biz-zt{
+
+  .m-biz-zttil{
+    border-bottom: 1px dotted #ddd;
+    margin-bottom: 10px;
+    padding:0 10px;
+    .pr;
+    .til{
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .news{
+      .pa;.rt(0,0);
+    }
+  }
+
+  .m-biz-ztlist{
+    .u-list(a,286px,20px,3);
+  }
+
+  .m-biz-ztbox{
+    .clearfix;
+    .h(auto);
+    transition:height 0.3s ease-in-out;
+    li{
+      width:286px;
+      .fl;
+      .pr;overflow:hidden;
+      margin:0 20px 20px 0;
+      a{
+        .db;.pr;.clip;
+        span{
+          .db;.h(93px);
+          img{width:100%;height:auto;}
+        }
+        &:after{
+          content:'';
+          .db;
+          .size(100%,50%);
+          .tb(255,255,255,0.4);
+          .pa;.lt(0,-100%);
+        }
+        &:hover{
+          &:after{
+            .lt(0,0);
+            transition:0.2s ease-in-out;
+          }
+        }
+      }
+      em{
+        .db;.x;line-height:2;
+      }
+    }
+  }
+
+  .m-biz-ztbox-all{
+    .none;
+  }
+
+  .m-biz-more{
+    .x;
+    background: #f7f7f7;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    .pointer;
+    &:hover{
+      background-color:#eee;
+    }
+  }
+}
