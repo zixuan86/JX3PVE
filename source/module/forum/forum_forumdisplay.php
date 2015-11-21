@@ -790,9 +790,9 @@ foreach($threadlist as $thread) {
 	}
 	$thread['istoday'] = $thread['dateline'] > $todaytime ? 1 : 0;
 	$thread['dbdateline'] = $thread['dateline'];
-	$thread['dateline'] = dgmdate($thread['dateline'], 'u', '9999', getglobal('setting/dateformat'));
+	$thread['dateline'] = dgmdate($thread['dateline'], 'd', '9999', getglobal('setting/dateformat'));
 	$thread['dblastpost'] = $thread['lastpost'];
-	$thread['lastpost'] = dgmdate($thread['lastpost'], 'u');
+	$thread['lastpost'] = dgmdate($thread['lastpost'], 'd');
 	$thread['hidden'] = $_G['setting']['threadhidethreshold'] && $thread['hidden'] >= $_G['setting']['threadhidethreshold'] || in_array($thread['tid'], $thide);
 
 	if($thread['hidden']) {
