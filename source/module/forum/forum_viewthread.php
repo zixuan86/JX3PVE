@@ -14,11 +14,11 @@ if(!defined('IN_DISCUZ')) {
 require_once libfile('function/forumlist');
 require_once libfile('function/discuzcode');
 require_once libfile('function/post');
-
 $thread = & $_G['forum_thread'];
 $forum = & $_G['forum'];
 $thread['dateline'] = dgmdate($thread['dateline'], 'd', '9999', getglobal('setting/dateformat'));
 $thread['lastedit'] = dgmdate($thread['lastedit'],'d');
+$forum_optionlist = $_G['forum_optionlist'];
 
 if(!$_G['forum_thread'] || !$_G['forum']) {
 	showmessage('thread_nonexistence');
