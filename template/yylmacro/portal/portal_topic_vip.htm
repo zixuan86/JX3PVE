@@ -75,17 +75,10 @@
 			</div>
 
 			<!-- 开通不成功提示充值 -->
-			<div class="m-fail" id="buyVipFail" style="display:none;">
-				<div class="m-msg-error-mod1">
-					<p class="fail result"><i></i>余额不足</p>
-					<p class="addcredit tips">您的米币不足，请先<a href="./buy-m">充值</a>。</p>
-					<a class="addbtn u-gobutton" href="./buy-m">充值</a>
-				</div>
-			</div>
 			<div class="m-fail" id="buyVipOtherFail" style="display:none;">
 				<div class="m-msg-error-mod2">
 					<p class="fail result"><i></i>异常错误</p>
-					<p class="addcredit tips">错误代码（ABCD），请<a href="./vip">刷新页面</a>重试。</p>
+					<p class="addcredit tips">错误代码（<span id="errorCode"></span>），请<a href="./vip">刷新页面</a>重试。</p>
 					<p class="addcredit tips">如果反复出现，请至<a href="./feedback" target="_blank">反馈中心</a>提交给我们。</p>
 				</div>
 			</div>
