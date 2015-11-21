@@ -1,6 +1,12 @@
+<div class="u-baseinfo"><h3>基本信息</h3></div>
 <div class="m-biz-view">
     <div class="m-biz-pic u-imgorigin" title="点击查看原图">
         <img src="{biz_pic_value}" alt=""/>
+    </div>
+    <div class="m-biz-contact">
+        <a class="u-msgtoauthor u-qcactive" href="http://www.jx3pve.com/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{authorid}&touid={authorid}&pmid=0&daterange=1&pid={pid}&tid={tid}" onclick="showWindow('sendpm', this.href);" title="发消息"><i></i>留言</a>
+        <a class="u-addtofav u-qcactive" href="http://www.jx3pve.com/home.php?mod=spacecp&ac=favorite&type=thread&id={tid}" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);"><i></i>收藏</a>
+        <a class="u-reportit u-qcactive" href="javascript:;" onclick="showWindow('miscreport', 'misc.php?mod=report&url='+REPORTURL);return false;"><i></i>举报</a>
     </div>
     <div class="m-biz-info">
         <ul>
@@ -12,3 +18,4 @@
         </ul>
     </div>
 </div>
+<div class="u-moreinfo"><h3>更多说明</h3></div>

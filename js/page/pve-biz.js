@@ -3,7 +3,7 @@ H.ready(['jquery'], function() {
 
 
 		//判断交易状态涂色
-		$("#m-biz-list li a .biz-status").each(function(){
+		$(".u-biz-status").each(function(){
 			var status = $(this).text()
 			if(status == '出售中'){
 				$(this).addClass('onsale')
@@ -15,7 +15,7 @@ H.ready(['jquery'], function() {
 		})
 
 		//判断交易类型图标
-		$("#m-biz-list li a .biz-type").each(function(){
+		$(".u-biz-type").each(function(){
 			var type = $(this).children('b').text()
 			if(type == '账号'){
 				$(this).addClass('type-1')
