@@ -20,22 +20,23 @@
     </ul>
 </div>
 
-
-<div class="m-biz-list">
-    <ul>
-        <li class="thead"><a>
-            <span class="biz-status">出售状态</span>
-            <span class="biz-fwq">服务器</span>
-            <span class="biz-title">标题</span>
-            <span class="biz-dateline">发布时间</span>
-        </a></li>
-        [loop]
-        <li class="tbody"><a href="{subject_url}" target="_blank">
-            <span class="biz-status">{biz_status_value}</span>
-            <span class="biz-fwq"><em>@</em>{fuwuqi_value}</span>
-            <span class="biz-title"><i class="biz-type"><b>{biz_type_value}</b></i>{subject}</span>
-            <span class="biz-dateline">{dateline}</span>
-        </a></li>
-        [/loop]
-    </ul>
+<div class="u-baseinfo">
+    <h3>基本信息</h3>
+</div>
+<div class="m-biz-view">
+    <div class="m-biz-pic u-imgorigin" title="点击查看原图">
+        <img src="{biz_pic_value}" alt=""/>
+    </div>
+    <div class="m-biz-info">
+        <ul>
+            <li><label>{biz_status}:</label><span class="u-biz-status">{biz_status_value}</span></li>
+            <li><label>{biz_type}:</label><span>{biz_type_value}</span></li>
+            <li><label>{fuwuqi}:</label><span>{fuwuqi_value}</span></li>
+            <li><label>{biz_price}:</label><span>{biz_price_value}</span></li>
+            <li><label>{contact}:</label><span>{contact_value}</span></li>
+        </ul>
+    </div>
+</div>
+<div class="u-moreinfo">
+    <h3>更多说明</h3>
 </div>

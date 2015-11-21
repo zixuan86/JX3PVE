@@ -1,36 +1,112 @@
-.u-weibo{
-	.none;
-}
-.u-weibo-win{
-	.dbi;.y;
-	.size(64px,24px);
-}
+//新浪微博
+	.u-weibo{
+		.none;
+	}
+	.u-weibo-win{
+		.dbi;.y;
+		.size(64px,24px);
+	}
 
+//查看预览图
+	.u-imgorigin{
+		.pointer;
+	}
+	.u-imgorigin-fix{
+		.pf;.lt(50%,50%);
+		.z(800);
+		padding:28px;
+		background-color:#fff;
+		border:1px solid #ccc;
+		box-shadow: 0 0 5px rgba(0,0,0,.5);
+		.r(6px);
+		max-width:80%;
+		max-height:80%;
 
-.u-imgorigin{
-	.pointer;
-}
-.u-imgorigin-fix{
-	.pf;.lt(50%,50%);
-	.z(800);
-	padding:28px;
-	background-color:#fff;
-	border:1px solid #ccc;
-	box-shadow: 0 0 5px rgba(0,0,0,.5);
-	.r(6px);
-	max-width:80%;
-	max-height:80%;
-
-	&:after{
-		content:'';
-		.size(64px);.db;.pointer;
-		background:url('@{url}custom/close.png') no-repeat 0 0;
-		&:hover{
-			animation:rotateHalf 0.5s ease-in-out;
+		&:after{
+			content:'';
+			.size(64px);.db;.pointer;
+			background:url('@{url}custom/close.png') no-repeat 0 0;
+			&:hover{
+				animation:rotateHalf 0.5s ease-in-out;
+			}
 		}
 	}
-}
+	.fixpage{
+		.full;.clip;
+	}
 
-.fixpage{
-	.full;.clip;
-}
+//分割线分类信息
+	.u-moreinfo,.u-baseinfo{
+		.pr;
+		margin:20px 0;
+
+		&:before{
+		    content: '';
+		    display: block;
+		    width: 90%;
+		    height: 1px;
+		    background-color: #ddd;
+		    position: absolute;
+		    right: 0;
+		    top: 10px;
+		}
+
+		h3{
+		    display: inline-block;
+		    width: 70px;
+		   .lh(24px);
+		    border-radius: 24px;
+		    background-color: #eee;
+		    text-align: center;
+		}
+	}
+	.u-baseinfo{
+		h3{
+		    background-color:#0084ff;
+		    color:#fff;
+		}
+	}
+
+//快速交互
+	
+	.u-qcactive{
+		width: 100px;
+	    .fzlh(12px,16px);
+	    padding:7px 0;
+	    border: 1px solid #ddd;
+	    display: block;
+	    text-align: center;
+	    background: #f7f7f7;
+	    margin: 0 auto;
+	    border-radius: 3px;
+	    i{
+    	 	width: 16px;
+		    height: 16px;
+		    display: inline-block;
+		    vertical-align:top;
+		    background-repeat:no-repeat;
+		    background-position:0 0;
+		    margin-right:5px;
+	    }
+	}
+
+	//发消息
+	.u-msgtoauthor{
+	    i{
+		    background-image:url('@{url}icon/pmto.gif');
+	    }
+	}
+	
+	//收藏
+	.u-addtofav{
+		i{
+    	    background-image:url('@{url}icon/fav.gif');
+	    }
+	}
+
+	//举报
+	.u-reportit{
+		i{
+    	    background-image:url('@{url}icon/icon-report-16.png');
+	    }
+	}
