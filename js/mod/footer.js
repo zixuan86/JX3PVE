@@ -8,11 +8,11 @@ H.ready(['jquery'], function(){
             $fwin = $("#c-float-help")
 
     	//浮层·微信
-    	$wx_tg.hover(function(){
+    	/*$wx_tg.hover(function(){
     		$wx_img.fadeIn()
     	},function(){
     		$wx_img.fadeOut()
-    	})
+    	})*/
 
     	//浮层·回到顶部
     	$gotop.on('click',function(){

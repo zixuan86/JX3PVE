@@ -1,1 +1,1 @@
-H.ready(["jquery"],function(){jQuery(function(o){var c=o("#c-float-wx-tg"),n=o("#c-float-wx-code"),t=o("#c-float-gotop"),f=o("#c-float-close"),l=o("#c-float-help");c.hover(function(){n.fadeIn()},function(){n.fadeOut()}),t.on("click",function(){o(window).scrollTop(0)}),f.on("click",function(){l.hide()})})});
+H.ready(["jquery"],function(){jQuery(function(o){var c=(o("#c-float-wx-tg"),o("#c-float-wx-code"),o("#c-float-gotop")),l=o("#c-float-close"),n=o("#c-float-help");c.on("click",function(){o(window).scrollTop(0)}),l.on("click",function(){n.hide()})})});
