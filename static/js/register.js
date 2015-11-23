@@ -129,14 +129,18 @@ function checkstrongpw(id) {
 	return passlevel;
 }
 function showInputTip(id) {
-	var p_tips = $('registerform').getElementsByTagName('i');
+	var p_tips = document.getElementById("registerform").getElementsByTagName('i');
 	for(i = 0;i < p_tips.length;i++){
 		if(p_tips[i].className == 'p_tip'){
 			p_tips[i].style.display = 'none';
 		}
 	}
 	if($('tip_' + id)) {
-		$('tip_' + id).style.display = 'block';
+        if($('tip_' + id).style){
+           $('tip_' + id).style.display = 'block';
+        }else if($('tip_' + id).currentStyle){
+		  $('tip_' + id).currentStyle.display = 'block';
+        }
 	}
 }
 
