@@ -53,144 +53,6 @@
 		}
 	}
 
-	//搜索
-	.m-pvx-search{
-		.vm{
-			padding:5px;
-			width: 200px;
-			border: 1px solid #ddd;
-			background: none;
-			border-radius: 4px;
-			box-shadow: 0 0 4px #ddd inset;
-			background-color:#fff;
-			&:focus,&:hover{
-				box-shadow: 0 0 4px #0cf inset,0 0 2px #ddd;
-			}
-		}
-		.u-button-search{
-			.u-btn-gray(a);
-			padding: 4px 14px 3px;
-			.pr;
-			top:2px;
-			border-radius:3px;
-		}
-		.hot{
-			.clearfix;
-			padding:3px 0;
-			.fz(12px,2);
-
-			h3{.bold;.di;}
-			.module{
-				.di;.break;
-				ul{.clearfix;.di;}
-				li{.di;margin:0;margin-right:8px;.h(auto);}
-				a{text-decoration:underline;.color(#777,@bluex);}
-			}
-		}
-	}
-
-	//帮助手册
-	.m-pvx-help{
-		ul li{
-			.fz(12px,28px);
-			background:url('@{url}icon/faq.gif') no-repeat 4px center;
-			a{.db;padding-left:26px;}
-		}
-	}
-
-	//横版推荐
-	.m-pvx-imglist-1{
-		@left-w:128px;
-		@left-h:80px;
-		ul{padding:5px;}
-		li{
-			margin-bottom:10px;
-			&:hover{
-				background-color:#f7f7f7;
-			}
-		}
-		a{
-			.db;.w(100%);
-			.clearfix;
-			*{.db;}
-			.info{
-				span *{.dbi;}
-			}
-			&:hover{
-				.short{
-					.til{.lh(@left-h);}
-				}
-				.info{
-					.time{color:#777;}
-					.recmd{color:#888;}
-				}
-			} 
-		}
-		.short{
-			.fl;
-			padding:5px;border:1px solid #eee;//background-color:#eee;
-			.img{
-				.pr;.size(@left-w,@left-h);
-				img{
-					.size(100%,100%);
-					//.pa;
-				}
-			}
-			.til{
-				.tb(0,0,0,0.5);.x;color:#fff;
-				.pa;.lb(0,0);.w(100%);.lh(24px);
-				transition:0.3s ease-in-out;
-			}
-		}
-		.info{
-			//.fl;
-			padding: 10px;
-			line-height: 1.8;
-			margin-left:@left-w + 10px;
-			span{.nobreak;}
-			em{.di;}
-			.author{}
-			.time{color:#888;}
-			.recmd{color:#999;}
-		}
-	}
-
-	//竖版推荐
-	.m-pvx-imglist-2{
-		padding:10px 0;
-		.u-list(a,120px,15px,2);
-		ul{
-			.clearfix;
-			li{
-				.fl;
-			}
-		}
-	}
-
-	//任务奖励
-	.m-pvx-tasklist{
-		ul{padding:5px;}
-		li{.fz(12px,28px);padding-left:24px;}
-	}
-
-	//表格
-	.m-pvx-table{
-		.x;
-		a,span{.db;}
-		.color(#888,@bluex,#c00);
-
-		table{
-			.w(100%);
-			th{background-color:#f8f8f8;}
-			td,th{
-				border:1px solid #ddd;
-				line-height:2.2;
-				padding:0 3px;
-				.x;
-			}
-		}
-	}
-
 	//大蓝色发布按钮
 	.u-btn-pvxpub{
 		.db;.lh(40px);.indent(45px);
@@ -206,8 +68,250 @@
 			margin-left:6px;.normal;
 			color:#83D7FC;
 		}
-		margin-bottom:20px;
+
+		&:hover{
+			color:#fff;
+		}
 	}
 
+}
 
+//搜索
+.m-pvx-search{
+	.vm{
+		padding:5px;
+		width: 200px;
+		border: 1px solid #ddd;
+		background: none;
+		border-radius: 4px;
+		box-shadow: 0 0 4px #ddd inset;
+		background-color:#fff;
+		&:focus,&:hover{
+			box-shadow: 0 0 4px #0cf inset,0 0 2px #ddd;
+		}
+	}
+	.u-button-search{
+		.u-btn-gray(a);
+		padding: 4px 14px 3px;
+		.pr;
+		top:2px;
+		border-radius:3px;
+	}
+	.hot{
+		.clearfix;
+		padding:3px 0;
+		.fz(12px,2);
+
+		h3{.bold;.di;}
+		.module{
+			.di;.break;
+			ul{.clearfix;.di;}
+			li{.di;margin:0;margin-right:8px;.h(auto);}
+			a{text-decoration:underline;.color(#777,@bluex);}
+		}
+	}
+}
+
+//帮助手册
+.m-pvx-help{
+	ul li{
+		.fz(12px,28px);
+		background:url('@{url}icon/faq.gif') no-repeat 4px center;
+		a{.db;padding-left:26px;}
+	}
+}
+
+//横版推荐
+.m-pvx-imglist-1{
+	@left-w:128px;
+	@left-h:80px;
+	ul{padding:5px;}
+	li{
+		margin-bottom:10px;
+		&:hover{
+			background-color:#f7f7f7;
+		}
+	}
+	a{
+		.db;.w(100%);
+		.clearfix;
+		*{.db;}
+		.info{
+			span *{.dbi;}
+		}
+		&:hover{
+			.short{
+				.til{.lh(@left-h);}
+			}
+			.info{
+				.time{color:#777;}
+				.recmd{color:#888;}
+			}
+		} 
+	}
+	.short{
+		.fl;
+		padding:5px;border:1px solid #eee;//background-color:#eee;
+		.img{
+			.pr;.size(@left-w,@left-h);
+			img{
+				.size(100%,100%);
+				//.pa;
+			}
+		}
+		.til{
+			.tb(0,0,0,0.5);.x;color:#fff;
+			.pa;.lb(0,0);.w(100%);.lh(24px);
+			transition:0.3s ease-in-out;
+		}
+	}
+	.info{
+		//.fl;
+		padding: 10px;
+		line-height: 1.8;
+		margin-left:@left-w + 10px;
+		span{.nobreak;}
+		em{.di;}
+		.author{}
+		.time{color:#888;}
+		.recmd{color:#999;}
+	}
+}
+
+//竖版推荐
+.m-pvx-imglist-2{
+	padding:10px 0;
+	.u-list(a,120px,15px,2);
+	ul{
+		.clearfix;
+		li{
+			.fl;
+		}
+	}
+}
+
+//任务奖励
+.m-pvx-tasklist{
+	ul{padding:5px;}
+	li{.fz(12px,28px);padding-left:24px;}
+}
+
+//表格
+.m-pvx-table{
+	.x;
+	a,span{.db;}
+	.color(#888,@bluex,#c00);
+
+	table{
+		.w(100%);
+		th{background-color:#f8f8f8;}
+		td,th{
+			border:1px solid #ddd;
+			line-height:2.2;
+			padding:0 3px;
+			.x;
+		}
+	}
+}
+
+//分类导航 1列
+.m-pvx-sort-col-1{
+	margin-bottom:15px;
+	li{
+		.lh(40px);
+		//margin-bottom:10px;
+		border-bottom:1px solid #eee;
+		a{
+			.db;.full;transition:0.2s ease-in-out;
+			.fz(13px,40px);
+			.bold;
+			color:#049abf;
+			&:hover{background-color:#f2f2f2;}
+		}
+		i{
+			.dbi;.size(28px);.y;margin-right:10px;
+			background-color:#eee;
+			border:1px solid #eee;
+			background-repeat:no-repeat;
+		}
+		em{
+			.normal;
+			margin-left:10px;
+			text-transform:uppercase;
+			color:#888;
+			font-family:'Trebuchet MS',Tahoma,"\5FAE\8F6F\96C5\9ED1";
+		}
+		.type-1 i{background-position:0 0;}
+		.type-2 i{background-position:-29px 0;}
+		.type-3 i{background-position:-58px 0;}
+		.type-4 i{background-position:-87px 0;}
+	}
+}
+
+//分类导航 2列
+.m-pvx-sort-col-2{
+	margin-bottom:10px;
+	.clearfix;
+	li{
+		.size(50%,32px);
+		margin-bottom:10px;
+		.fl;
+		&:hover{
+			background-color:#f7f7f7;
+		}
+		a{
+			.db;.full;transition:0.2s ease-in-out;
+			.fz(13px,32px);
+			.bold;
+			color:@bluex;
+		}
+		i{
+			.dbi;.size(30px);.fl;margin-right:10px;
+			background-color:#eee;
+			border:1px solid #eee;
+		}
+		em{
+			.normal;
+			color:#888;
+			text-transform:uppercase;
+			.fz(11px);
+			margin-left:5px;
+			font-family:'Trebuchet MS',Tahoma,"\5FAE\8F6F\96C5\9ED1";
+		}
+	}
+}
+
+//发布按钮
+.m-pvx-pub{
+	.clearfix;
+	a{
+		.db;.lh(30px);.indent(45px);
+		.w(48%);.fl;
+		margin-right:5px;
+		.x(left);
+		border-radius:3px;
+		.bold;
+		background-repeat:no-repeat;
+		background-position: 15px center;
+		span{
+			text-transform:uppercase;
+			margin-left:6px;.normal;
+			color:#83D7FC;
+		}
+		&:hover{
+			color:#fff;
+		}
+	}
+	.u-pub-new{
+		.u-btn-blue(b);
+		background-image:url('@{url}icon/addbuddy.gif');
+	}
+	.u-pub-edit{
+		background-image:url('@{url}icon/edit.gif');
+	    background-color: #EABB36;
+	    color:#fff;
+	    &:hover{
+	    	background-color:lighten(#EABB36,8%);
+	    }
+	}
 }

@@ -54,3 +54,36 @@
 		}
 	}
 }
+
+.c-star-mini{
+	.fz(13px,20px);
+	.clearfix;.x;
+	a{
+		.db;
+		background-color:#fff;
+		border:1px solid #ddd;
+		border-radius:4px;
+		padding:5px;
+	}
+	i{
+		.size(20px);.dbi;.y(top);
+		margin-right:3px;
+	}
+	.fav{
+		margin-bottom:5px;
+		i{background:url('@{url}book/fav.png') no-repeat center center;}
+		&:hover{
+			i{
+				animation:rotateRound 1s ease-in-out forwards;
+			}
+		}
+	}
+	.zan{
+		i{background:url('@{url}book/zan.png') no-repeat center center;}
+		&:hover{
+			i{
+				animation:heartZoom 0.5s ease-in-out 2 forwards;
+			}
+		}
+	}
+}

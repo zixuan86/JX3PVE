@@ -1,0 +1,64 @@
+<div class="m-qiyu-primary">
+	<ul>
+		<li>
+			<span class="label">{dream_name}</span>
+			<span class="value">{dream_name_value}</span>
+		</li>
+		<li>
+			<span class="label">{dream_type}</span>
+			<span class="value">{dream_type_value}</span>
+		</li>
+		<li>
+			<span class="label">{dream_map}</span>
+			<span class="value">{dream_map_value}</span>
+		</li>
+		<li>
+			<span class="label">{dream_count}</span>
+			<span class="value">{dream_count_value}</span>
+		</li>
+		<li>
+			<span class="label">{dream_cd}</span>
+			<span class="value">{dream_cd_value}</span>
+		</li>
+	</ul>
+</div>
+<div class="m-qiyu-extend">
+	<div class="m-share">
+		<div class="bdsharebuttonbox macro-share">
+			<a href="#" class="bds_more" data-cmd="more"></a>
+			<a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+			<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+			<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+			<a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+			<a href="#" class="bds_print" data-cmd="print" title="分享到打印"></a>
+		</div>
+		<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+		</script>
+	</div>
+	<div class="m-star c-star-mini">
+		<!-- 收藏 -->
+		<a class="fav" href="home.php?mod=spacecp&ac=favorite&type=thread&id={tid}" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);">
+			<i></i><em>收藏</em>
+		</a>
+
+		<!-- 点赞 -->
+		<a class="zan" id="recommend_add" href="forum.php?mod=misc&action=recommend&do=add&tid={tid}&hash=5a5df953" onclick="ajaxmenu(this, 3000, 1, 0, '43', 'recommendupdate(1)');return false;">
+			<i></i><em>点赞</em>
+		</a>
+	</div>
+</div>
+<div class="u-baseinfo">
+	<h3>前置条件</h3>
+	<div class="m-qiyu-content">{dream_before_value}</div>
+</div>
+<div class="u-baseinfo">
+	<h3>触发条件</h3>
+	<div class="m-qiyu-content">{dream_after_value}</div>
+</div>
+<div class="u-baseinfo">
+	<h3>任务奖励</h3>
+	<div class="m-qiyu-content">{dream_gift_value}</div>
+</div>
+<div class="u-moreinfo">
+	<h3>补充说明</h3>
+</div>

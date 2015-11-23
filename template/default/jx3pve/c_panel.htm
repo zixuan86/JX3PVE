@@ -73,6 +73,11 @@
 			<!--{if $post['authorid'] != $_G['uid']}-->
 				<a class="report" href="javascript:;" onclick="showWindow('miscreport$post[pid]', 'misc.php?mod=report&rtype=post&rid=$post[pid]&tid=$_G[tid]&fid=$_G[fid]', 'get', -1);return false;"><i></i>{lang report}</a>
 			<!--{/if}-->
+
+		<!-- 评分 -->
+		<!--{if ($_G[groupid]==1)}-->
+		<a class="rate" href="javascript:;" id="ak_rate" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=$_G[tid]&pid=$post[pid]', 'get', -1);return false;" title="我来评分"><i></i>评分</a>
+		<!--{/if}-->
 	</div>
 <!--{/if}-->
 <!--{hook/viewthread_postfooter $postcount}-->

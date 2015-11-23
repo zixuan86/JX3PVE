@@ -42,6 +42,10 @@
 		<!--{if $post['first'] && $post['invisible'] == -3}-->
 			<!--<a class="psave" href="forum.php?mod=misc&action=pubsave&tid=$_G[tid]">{lang published}</a>-->
 		<!--{/if}-->
+		<!-- 评分 -->
+		<!--{if ($_G[groupid]==1)}-->
+		<a class="u-btn-cmt" href="javascript:;" id="ak_rate" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=$_G[tid]&pid=$post[pid]', 'get', -1);return false;" title="我来评分"><i></i>评分</a>
+		<!--{/if}-->
 	<!--{/if}-->
 
 	<!-- 管理 -->

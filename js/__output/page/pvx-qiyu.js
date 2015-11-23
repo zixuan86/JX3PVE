@@ -1,0 +1,1 @@
+H.ready(["jquery"],function(){jQuery(function(){H.curpage(".u-qiyu"),H.route(130)})});
