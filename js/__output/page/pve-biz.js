@@ -1,0 +1,1 @@
+H.ready(["jquery"],function(){jQuery(function(t){t(".u-biz-status").each(function(){var e=t(this).text();t(this).addClass("出售中"==e?"onsale":"求购中"==e?"onbuy":"exp")}),t(".u-biz-type").each(function(){var e=t(this).children("b").text();t(this).addClass("账号"==e?"type-1":"代练"==e?"type-2":"装备"==e?"type-3":"type-4")}),H.curpage(".u-biz"),H.route(129)})});
