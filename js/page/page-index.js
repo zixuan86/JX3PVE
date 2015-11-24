@@ -11,7 +11,7 @@ H.ready(['jquery','swiper'],function(){
 	    	autoplayDisableOnInteraction : false
 		}); 
 
-		var $slider = $("#jx3pve-slider"),
+		/*var $slider = $("#jx3pve-slider"),
 			$imglist = $("#jx3pve-slider-imglist"),
 			$img = $("#jx3pve-slider-imglist li"),
 			$txtlist = $("#jx3pve-slider-txtlist"),
@@ -39,6 +39,6 @@ H.ready(['jquery','swiper'],function(){
 			}
 		}
 		autoSlider()
-		var sliderTG = setInterval(autoSlider,3800)
+		var sliderTG = setInterval(autoSlider,3800)*/
 	})
 })

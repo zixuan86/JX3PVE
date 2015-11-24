@@ -3,15 +3,19 @@
 	margin-bottom:0;
 
 	.app{
-		.fl;.w(580px - 20px - 172px);.clip;
-		ul{.w(580px - 172px);.clearfix;}
+		.fl;//.w(580px - 20px - 172px);
+		.clip;
+		ul{
+			//.w(580px - 172px);
+			.clearfix;
+		}
 		li{.fl;margin-right:15px;margin-bottom:15px;}
 		a,img,span{.db;}
 		img{.size(60px);.db;border:2px solid #ccc;transition:0.4s ease-in-out;}
 		span{.x;.fz(12px,2);}
 		padding:2px 5px;
 	}
-	.code{
+	.code{.none;
 		.fr;
 		img{.size(172px);}
 		border:1px solid #ddd;.r(3px);
@@ -37,6 +41,10 @@
 	.img{
 		position:relative;overflow:hidden;
 		box-shadow:0 0 2px #ddd;
+	}
+
+	.txt{
+		color:#666;
 	}
 
 	li:hover{
