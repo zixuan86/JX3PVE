@@ -1,49 +1,31 @@
 .m-index-slider{
-	.size(auto,220px);
-	.clip;
+	box-shadow:0 0 2px #ddd;
+	.size(100%,180px);.clip;
+	.r(3px);
+	.swiper-container{.full;}
+	a,img{.full;}
+	img{.db;.r(3px);}
 
-	.jx3pve-slider{
-		.full;.pr;
+	a{
+		.db;
+		transition:0.28s ease-in-out;
 	}
-
-	.jx3pve-slider-imglist{
-
-		.full;
-		li,a{
-			.db;.full;
-			img{.db;.full;.r(12px);}
-		}
-		li{
-			.none;
-			&.on{
-				.db;
-				animation:fadeIn 0.3s ease-in-out;
-			}
-		}
+	a:hover{
+		-webkit-filter:brightness(110%);
 	}
-	.jx3pve-slider-txtlist{
-		.pa;.rt(0,0);
-		.size(180px,160px);
-		.clip;
-		box-shadow:0 0 6px rgba(0,0,0,.5);
-		margin:20px;
-		padding:10px;
-		border:2px solid #222;
-		.r(4px);
-		.tb(0,0,0,.6);
+}
 
-		li{
-			.fzlh(12px,32px);
-			.nobreak;
-			.clip;
-			padding:0 10px;
-			border-bottom:1px solid #222;
-			a{.db;.color(#909090);}
-			&.on{
-				//.tb(73, 117, 134, 0.41);
-				.tb(0,0,0,0.41);
-				a{color:#0cf;}
-			}
-		}
+.swiper-pagination{
+	.pa;.lb(0,0);
+	.x;.full(x);.h(20px);
+	.swiper-pagination-switch{
+		.dbi;.size(10px);.r(10px);
+		background-color:#fff;
+		margin-right:5px;
+		.pointer;
+		.tm(0.5);
+	}
+	.swiper-active-switch{
+		.tm(1);
 	}
 }

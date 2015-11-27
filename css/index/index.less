@@ -1,8 +1,59 @@
 .index-container{
-	background-color:#f2f2f2;
+	margin-top:1px;
 	padding:20px 0;
+	background:url('@{url}index/bg.png') #fff repeat-x top left;
+}
+
+.index-primary{
+	.w(580px);
+	.fl;
+}
+
+.index-sidebar{
+	.fr;
+	.w(@wp - 580px - 20px);
+}
+
+.index-content{
+	.clearfix;
 }
 
 .m-index-block{
-	margin-bottom:40px;
+	margin-bottom:20px;
+}
+
+.m-index-til{
+	.lh(32px);
+	border-bottom:1px solid #ddd;
+	.pr;color:#444;
+	.clearfix;
+
+	.til{
+		.fl;.fz(18px);
+		border-bottom:2px solid #222;
+	}
+
+	.link{
+		.fr;.fz(12px);
+		li{.fl;margin-left:10px;}
+	}
+}
+
+.index-footer{
+	padding:10px 0;
+	background-color:#2d2d2d;
+	a:hover{text-decoration:underline;}
+	.fz(12px,2);
+	.color(#808080,#ccc,@blue);
+
+	.copyright{
+		padding:10px 0;
+		b{color:@blue;}
+	}
+
+	.links{
+		ul{.clearfix;}
+		li{.fl;margin-right:10px;}
+		.color(#808080,#ccc,@blue);
+	}
 }

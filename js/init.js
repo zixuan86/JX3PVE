@@ -21,6 +21,7 @@ H.load([
 
 //全局设置
 H.ready('jquery',function(){
+	var jQuery = jQuery || $; 
 	jQuery.noConflict();
 
 	//当前页
